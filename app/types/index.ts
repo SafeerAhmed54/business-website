@@ -1,5 +1,6 @@
 // Core business data interfaces
 export interface BusinessInfo {
+  image?: string;
   name: string;
   tagline: string;
   phone: string;
@@ -16,7 +17,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  category: 'signboard' | 'contracting' | 'both';
+  category: "signboard" | "contracting" | "both";
   images: string[];
   completedDate: string;
   featured: boolean;
@@ -53,7 +54,7 @@ export interface Service {
   title: string;
   description: string;
   features: string[];
-  category: 'signboard' | 'contracting';
+  category: "signboard" | "contracting";
   icon?: string;
 }
 
