@@ -12,13 +12,7 @@ export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       {/* Background with radial gradient - the original one you wanted */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background:
-            "radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%)",
-        }}
-      ></div>
+      <div></div>
 
       {/* Animated background particles */}
       <div className="absolute inset-0">

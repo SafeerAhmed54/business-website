@@ -25,21 +25,28 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'px-8 py-4 text-lg'
     };
 
-    const Component = asChild ? 'span' : 'button';
+    const buttonClasses = cn(
+      baseStyles,
+      variants[variant],
+      sizes[size],
+      className
+    );
+
+    if (asChild) {
+      return React.cloneElement(children as React.ReactElement, {
+        className: cn((children as React.ReactElement).props.className, buttonClasses),
+        ...props
+      });
+    }
 
     return (
-      <Component
-        className={cn(
-          baseStyles,
-          variants[variant],
-          sizes[size],
-          className
-        )}
+      <button
+        className={buttonClasses}
         ref={ref}
         {...props}
       >
         {children}
-      </Component>
+      </button>
     );
   }
 );

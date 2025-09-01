@@ -17,3 +17,5 @@ export {
   SectionContent,
   type SectionProps 
 } from './Section';
+export { default as AnimatedBackground } from './AnimatedBackground';
+export { default as AnimatedTitle } from './AnimatedTitle';

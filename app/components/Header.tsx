@@ -18,13 +18,13 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
   };
 
   return (
-    <header className="bg-black shadow-lg sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-green-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Company Name/Logo Section */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+              <h1 className="text-2xl font-bold text-gray-900 hover:text-[#2EB62C] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
                 {businessInfo.name}
               </h1>
             </Link>
@@ -37,7 +37,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors px-3 py-2 rounded-md hover:bg-blue-50"
+                  className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -47,7 +47,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors px-3 py-2 rounded-md hover:bg-blue-50"
+                  className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
                 >
                   {item.label}
                 </Link>
@@ -59,12 +59,16 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href={`tel:${businessInfo.phone}`}
-              className="text-gray-700 font-semibold hover:text-blue-600 transition-colors"
+              className="text-gray-700 font-semibold hover:text-[#2EB62C] transition-colors"
               aria-label={`Call us at ${businessInfo.phone}`}
             >
               {businessInfo.phone}
             </a>
-            <Button asChild size="sm">
+            <Button 
+              asChild 
+              size="sm"
+              className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0"
+            >
               <Link href="/contact">Get Quote</Link>
             </Button>
           </div>
@@ -72,7 +76,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#2EB62C]"
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
             onClick={toggleMobileMenu}
@@ -109,13 +113,13 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
           className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}
           id="mobile-menu"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-green-200">
             {navigation.map((item) => (
               item.external ? (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -126,7 +130,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -135,11 +139,11 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
             ))}
             
             {/* Mobile Contact Info */}
-            <div className="border-t border-gray-200 pt-4 pb-3">
+            <div className="border-t border-green-200 pt-4 pb-3">
               <div className="px-3 space-y-3">
                 <a
                   href={`tel:${businessInfo.phone}`}
-                  className="flex items-center text-gray-700 hover:text-blue-600 font-medium"
+                  className="flex items-center text-gray-700 hover:text-[#2EB62C] font-medium"
                   aria-label={`Call us at ${businessInfo.phone}`}
                 >
                   <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +151,10 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                   </svg>
                   {businessInfo.phone}
                 </a>
-                <Button className="w-full" asChild>
+                <Button 
+                  className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0" 
+                  asChild
+                >
                   <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     Get Free Quote
                   </Link>

@@ -1,15 +1,27 @@
 @import "tailwindcss";
 
+/* Custom Font Imports */
+@font-face {
+  font-family: 'Milkerby';
+  src: url('/fonts/Milkerby-Regular.woff2') format('woff2'),
+    url('/fonts/Milkerby-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brandsemut';
+  src: url('/fonts/Brandsemut-Regular.woff2') format('woff2'),
+    url('/fonts/Brandsemut-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --background: #f8f9fa;
   --foreground: #4a5568;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-milkerby: 'Milkerby', var(--font-inter), system-ui, sans-serif;
+  --font-brandsemut: 'Brandsemut', var(--font-inter), system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,14 +34,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
+
 /* Custom animations for hero section */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -58,4 +72,492 @@ body {
 /* Smooth hover transitions */
 .transition-all {
   transition: all 0.3s ease;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Modern progress bar animation */
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Enhanced glassmorphism effects */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* 3D Perspective and Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Enhanced shadow for 3D cards */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Custom Font Utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+/* Enhanced text gradients */
+.text-gradient-blue-purple {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth animations for all elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Fixed Background Pattern */
+body {
+  background: #ffffff;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(100, 116, 139, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(148, 163, 184, 0.01) 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: 100% 100%, 100% 100%;
+  position: relative;
+}
+
+/* Static subtle background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(100, 116, 139, 0.02), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(148, 163, 184, 0.015), transparent);
+  background-repeat: repeat;
+  background-size: 200px 150px, 180px 120px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes backgroundMove {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-10px, -5px);
+  }
+
+  50% {
+    transform: translate(5px, -10px);
+  }
+
+  75% {
+    transform: translate(-5px, 5px);
+  }
+}
+
+/* Enhanced animated line for section titles */
+@keyframes lineGrow {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+
+  to {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+@keyframes lineShimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animated-line {
+  position: relative;
+  display: inline-block;
+}
+
+/* Remove animated line - keeping class for compatibility */
+.animated-line::after {
+  display: none;
+}
+
+/* Alternative animated line with double effect */
+.animated-line-double {
+  position: relative;
+  display: inline-block;
+}
+
+/* Remove double animated line - keeping class for compatibility */
+.animated-line-double::before,
+.animated-line-double::after {
+  display: none;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for accent elements */
+@keyframes pulse-green {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-green {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+/* Enhanced section backgrounds */
+.section-bg-pattern {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(46, 182, 44, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(203, 211, 148, 0.02) 0%, transparent 50%);
+}
+
+/* Staggered animation for elements */
+.stagger-animation {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.stagger-animation:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-animation:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-animation:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-animation:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stagger-animation:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Subtle gradient text */
+.text-gradient-green {
+  background: linear-gradient(135deg, rgba(100, 116, 139, 0.9), rgba(148, 163, 184, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Improved hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(46, 182, 44, 0.15);
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: pageLoad 0.6s ease-out forwards;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced border gradients */
+.border-gradient-green {
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #2EB62C, #cbd394) border-box;
+}
+
+/* Improved focus states */
+.focus-ring-green:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 182, 44, 0.3);
+}
+
+/* Loading animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Modern title styling */
+.title-modern {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.title-modern span {
+  font-weight: 800;
+}
+
+/* Black text instead of gradient */
+.text-gradient-enhanced {
+  color: #000000;
+  font-weight: 800;
+}
+
+/* Section title container */
+.section-title-container {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+/* Remove section title line */
+.section-title-container::before {
+  display: none;
+}
+
+/* Responsive title adjustments */
+@media (max-width: 768px) {
+
+  .animated-line::after,
+  .animated-line-double::before,
+  .animated-line-double::after {
+    width: 90%;
+  }
+}
+
+/* Title animation on scroll */
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title-animate-in {
+  animation: titleFadeIn 0.8s ease-out forwards;
+}
+
+/* Minim
+alist Color Palette */
+:root {
+  --color-primary: rgba(100, 116, 139, 1);
+  /* slate-500 */
+  --color-primary-light: rgba(148, 163, 184, 1);
+  /* slate-400 */
+  --color-primary-dark: rgba(71, 85, 105, 1);
+  /* slate-600 */
+  --color-accent: rgba(156, 163, 175, 1);
+  /* gray-400 */
+  --color-subtle: rgba(203, 213, 225, 1);
+  /* slate-300 */
+}
+
+/* Minimalist accent colors */
+.text-primary-cool {
+  color: var(--color-primary);
+}
+
+.text-primary-light-cool {
+  color: var(--color-primary-light);
+}
+
+.bg-primary-cool {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-light-cool {
+  background-color: var(--color-primary-light);
+}
+
+.border-primary-cool {
+  border-color: var(--color-primary);
+}
+
+/* Subtle hover effects */
+.hover-primary-cool:hover {
+  color: var(--color-primary-dark);
+  transition: color 0.2s ease;
+}
+
+/* Minimalist gradients */
+.bg-gradient-cool {
+  background: linear-gradient(135deg,
+      rgba(100, 116, 139, 0.05) 0%,
+      rgba(148, 163, 184, 0.03) 100%);
+}
+
+.bg-gradient-cool-subtle {
+  background: linear-gradient(135deg,
+      rgba(100, 116, 139, 0.02) 0%,
+      rgba(148, 163, 184, 0.015) 100%);
+}
+
+/* Clean shadows */
+.shadow-cool {
+  box-shadow: 0 4px 6px -1px rgba(100, 116, 139, 0.1),
+    0 2px 4px -1px rgba(100, 116, 139, 0.06);
+}
+
+.shadow-cool-lg {
+  box-shadow: 0 10px 15px -3px rgba(100, 116, 139, 0.1),
+    0 4px 6px -2px rgba(100, 116, 139, 0.05);
+}
+
+/* Minimalist borders */
+.border-cool {
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.border-cool-light {
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* Clean button styles */
+.btn-minimal {
+  background: rgba(100, 116, 139, 0.08);
+  color: var(--color-primary);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-minimal:hover {
+  background: rgba(100, 116, 139, 0.12);
+  border-color: rgba(100, 116, 139, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Subtle animations */
+.animate-subtle-float {
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+@keyframes subtleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
