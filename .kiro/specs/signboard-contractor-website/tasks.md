@@ -47,16 +47,25 @@
     - Add "View All Projects" CTA linking to portfolio page
     - _Requirements: 2.1, 2.2, 7.1_
 
-- [ ] 4. Create static data and business information
+- [x] 4. Create static data and business information
 
-  - [ ] 4.1 Set up business data configuration
+
+
+
+
+
+  - [x] 4.1 Set up business data configuration
+
+
 
     - Create business information data file with contact details, hours, and company info
     - Define services data with descriptions and categories
     - Set up sample portfolio projects data structure
     - _Requirements: 3.1, 6.1, 6.2_
 
-  - [ ] 4.2 Add sample portfolio images and optimize
+  - [x] 4.2 Add sample portfolio images and optimize
+
+
     - Add placeholder portfolio images to public directory
     - Implement proper image optimization using Next.js Image component
     - Create image loading and error handling

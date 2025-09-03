@@ -2,46 +2,40 @@ import React from 'react';
 import { cn } from '@/app/lib/utils';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
+  variant?: 'default' | 'outline' | 'ghost' | 'link';
+  size?: 'default' | 'sm' | 'lg';
   asChild?: boolean;
+  children: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, asChild = false, ...props }, ref) => {
-    const baseStyles = 'inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+  ({ className, variant = 'default', size = 'default', asChild = false, children, ...props }, ref) => {
+    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
     
     const variants = {
-      primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 transform hover:scale-105',
-      secondary: 'bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 transform hover:scale-105',
-      outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500',
-      ghost: 'text-blue-600 hover:bg-blue-50 focus:ring-blue-500'
+      default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+      outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+      ghost: 'hover:bg-accent hover:text-accent-foreground',
+      link: 'text-primary underline-offset-4 hover:underline'
     };
 
     const sizes = {
-      sm: 'px-4 py-2 text-sm',
-      md: 'px-6 py-3 text-base',
-      lg: 'px-8 py-4 text-lg'
+      default: 'h-10 px-4 py-2',
+      sm: 'h-9 rounded-md px-3',
+      lg: 'h-11 rounded-md px-8'
     };
 
-    const buttonClasses = cn(
-      baseStyles,
-      variants[variant],
-      sizes[size],
-      className
-    );
-
     if (asChild) {
-      return React.cloneElement(children as React.ReactElement, {
-        className: cn((children as React.ReactElement).props.className, buttonClasses),
-        ...props
-      });
+      return (
+        <div className={cn(baseStyles, variants[variant], sizes[size], className)}>
+          {children}
+        </div>
+      );
     }
 
     return (
       <button
-        className={buttonClasses}
+        className={cn(baseStyles, variants[variant], sizes[size], className)}
         ref={ref}
         {...props}
       >
@@ -54,4 +48,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = 'Button';
 
 export { Button };
-export type { ButtonProps };
+export default Button;

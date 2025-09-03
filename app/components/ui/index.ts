@@ -1,21 +1,7 @@
-// Export all UI components from a single entry point
-export { Button, type ButtonProps } from './Button';
-export { 
-  Card, 
-  CardHeader, 
-  CardTitle, 
-  CardDescription, 
-  CardContent, 
-  CardFooter,
-  type CardProps 
-} from './Card';
-export { 
-  Section, 
-  SectionHeader, 
-  SectionTitle, 
-  SectionSubtitle, 
-  SectionContent,
-  type SectionProps 
-} from './Section';
-export { default as AnimatedBackground } from './AnimatedBackground';
-export { default as AnimatedTitle } from './AnimatedTitle';
+// UI Components exports
+export { default as OptimizedImage } from './OptimizedImage';
+export { default as PortfolioImage } from './PortfolioImage';
+export { default as ImageModal } from './ImageModal';
+export { default as ImageGallery } from './ImageGallery';
+export { default as ImageSkeleton } from './ImageSkeleton';
+export { Button } from './Button';

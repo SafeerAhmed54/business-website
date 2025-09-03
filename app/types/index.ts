@@ -54,7 +54,7 @@ export interface Service {
   title: string;
   description: string;
   features: string[];
-  category: "signboard" | "contracting";
+  category: "signboard" | "contracting" | "both";
   icon?: string;
 }
 
