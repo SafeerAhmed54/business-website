@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Service } from '@/app/types';
-import { Button } from './Button';
 
 interface ServiceModalProps {
   service: Service | null;
@@ -142,7 +141,7 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
 
         {/* Features Section */}
         <div className="px-6 pb-6">
-          <h3 className="text-lg font-bold text-black mb-4">What's Included</h3>
+          <h3 className="text-lg font-bold text-black mb-4">What&apos;s Included</h3>
           <div className="grid gap-2">
             {service.features.map((feature, index) => (
               <div 

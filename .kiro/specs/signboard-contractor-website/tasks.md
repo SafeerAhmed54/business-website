@@ -25,7 +25,6 @@
 
 - [x] 3. Build homepage components and layout
 
-
   - [x] 3.1 Create Hero section component
 
     - Implement hero section with business name, tagline, and primary CTA
@@ -49,14 +48,7 @@
 
 - [x] 4. Create static data and business information
 
-
-
-
-
-
   - [x] 4.1 Set up business data configuration
-
-
 
     - Create business information data file with contact details, hours, and company info
     - Define services data with descriptions and categories
@@ -65,37 +57,43 @@
 
   - [x] 4.2 Add sample portfolio images and optimize
 
-
     - Add placeholder portfolio images to public directory
     - Implement proper image optimization using Next.js Image component
     - Create image loading and error handling
     - _Requirements: 2.1, 2.3, 5.2_
 
-- [ ] 5. Build Services page
+- [x] 5. Build Services page
 
-  - [ ] 5.1 Create detailed services page layout
+  - [x] 5.1 Create detailed services page layout
 
     - Implement services page with detailed service descriptions
     - Create service detail cards with expanded information
     - Add service-specific call-to-action sections
     - _Requirements: 1.2, 7.2_
 
-  - [ ] 5.2 Add service categories and features
+  - [x] 5.2 Add service categories and features
+
     - Build signboard services section with specific offerings
     - Create contracting services section with capabilities
     - Implement service features lists and benefits
     - _Requirements: 1.2, 6.2_
 
-- [ ] 6. Implement Portfolio page and components
+- [-] 6. Implement Portfolio page and components
 
-  - [ ] 6.1 Create portfolio gallery layout
+
+
+
+  - [x] 6.1 Create portfolio gallery layout
+
+
 
     - Build portfolio page with responsive grid layout
     - Implement project cards with images, titles, and categories
     - Add category filtering functionality for project types
     - _Requirements: 2.1, 2.2_
 
-  - [ ] 6.2 Build project detail modal/lightbox
+  - [-] 6.2 Build project detail modal/lightbox
+
     - Create image modal component for enlarged project views
     - Implement project detail overlay with descriptions and multiple images
     - Add navigation between projects within modal

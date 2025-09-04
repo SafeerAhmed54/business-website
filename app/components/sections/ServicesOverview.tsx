@@ -45,13 +45,7 @@ const serviceIcons = {
   )
 };
 
-// Service categories for filtering
-const serviceCategories = [
-  { id: 'all', name: 'All Services', icon: '🏢' },
-  { id: 'signboard', name: 'Signboard', icon: '🪧' },
-  { id: 'contracting', name: 'Contracting', icon: '🏗️' },
-  { id: 'both', name: 'Combined', icon: '⚡' }
-];
+
 
 export default function ServicesOverview({ services }: ServicesOverviewProps) {
   return (
@@ -165,7 +159,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
               Ready to get started on your project?
             </h3>
             <p className="text-xl text-green-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Let's discuss your needs and create something amazing together.
+              Let&apos;s discuss your needs and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
