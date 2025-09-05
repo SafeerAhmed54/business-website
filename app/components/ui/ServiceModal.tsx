@@ -165,8 +165,10 @@ export default function ServiceModal({ service, isOpen, onClose }: ServiceModalP
             <button 
               className="flex-1 bg-[#2EB62C] hover:bg-[#25a023] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               onClick={() => {
-                const contactUrl = '/contact?service=' + encodeURIComponent(service.title);
-                window.open(contactUrl, '_blank');
+                const target = document.querySelector('#contact');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
             >
               Get Free Quote

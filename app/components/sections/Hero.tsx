@@ -90,27 +90,33 @@ export default function Hero({ businessInfo }: HeroProps) {
             {/* Modern CTA buttons with new green theme */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
               <Button 
-                asChild 
                 size="lg" 
-                className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
+                onClick={() => {
+                  const target = document.querySelector('#contact');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                <Link href="/contact" className="group">
-                  Get Free Quote Today
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                Get Free Quote Today
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Button>
               
               <Button 
-                asChild 
                 variant="outline" 
                 size="lg"
                 className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm font-semibold px-8 py-4 text-lg transition-all duration-300"
+                onClick={() => {
+                  const target = document.querySelector('#portfolio');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                <Link href="/portfolio">
-                  View Our Work
-                </Link>
+                View Our Work
               </Button>
             </div>
 

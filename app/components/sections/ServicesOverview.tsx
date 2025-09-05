@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Service } from '@/app/types';
 import { Button } from '../ui/Button';
+import { ServiceModal } from '../ui/ServiceModal';
 
 
 interface ServicesOverviewProps {
@@ -48,6 +49,8 @@ const serviceIcons = {
 
 
 export default function ServicesOverview({ services }: ServicesOverviewProps) {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+
   return (
     <section className="py-24 relative overflow-hidden bg-white">
       {/* White background */}
@@ -69,11 +72,12 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
           {services.map((service, index) => (
             <div
               key={service.id}
-              className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-5 border border-gray-200/60 hover:border-[#2EB62C]/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-5 border border-gray-200/60 hover:border-[#2EB62C]/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 animation: 'fadeInUp 0.6s ease-out forwards'
               }}
+              onClick={() => setSelectedService(service)}
             >
               {/* Compact Header with Icon & Title */}
               <div className="flex items-center gap-3 mb-3">
@@ -163,33 +167,46 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
-                asChild 
                 size="lg"
-                className="bg-white text-[#2EB62C] hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300 hover:scale-105"
+                className="bg-white text-[#2EB62C] hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300 hover:scale-105 group"
+                onClick={() => {
+                  const target = document.querySelector('#contact');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                <Link href="/services" className="group">
-                  View All Services
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                Get Free Quote
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Button>
               <Button 
-                asChild 
                 variant="outline" 
                 size="lg" 
                 className="border-2 border-white text-white hover:bg-white hover:text-[#2EB62C] font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
+                onClick={() => {
+                  const target = document.querySelector('#portfolio');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
-                <Link href="/contact">
-                  Get Free Quote
-                </Link>
+                View Our Work
               </Button>
             </div>
           </div>
         </div>
       </div>
 
-
+      {/* Service Detail Modal */}
+      {selectedService && (
+        <ServiceModal
+          service={selectedService}
+          isOpen={!!selectedService}
+          onClose={() => setSelectedService(null)}
+        />
+      )}
     </section>
   );
 }

@@ -44,13 +44,20 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                   {item.label}
                 </a>
               ) : (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item.label}
-                </Link>
+                </a>
               )
             ))}
           </nav>
@@ -65,11 +72,16 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
               {businessInfo.phone}
             </a>
             <Button 
-              asChild 
               size="sm"
               className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0"
+              onClick={() => {
+                const target = document.querySelector('#contact');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
-              <Link href="/contact">Get Quote</Link>
+              Get Quote
             </Button>
           </div>
 
@@ -127,14 +139,21 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                   {item.label}
                 </a>
               ) : (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item.label}
-                </Link>
+                </a>
               )
             ))}
             
@@ -152,12 +171,16 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                   {businessInfo.phone}
                 </a>
                 <Button 
-                  className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0" 
-                  asChild
+                  className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    const target = document.querySelector('#contact');
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    Get Free Quote
-                  </Link>
+                  Get Free Quote
                 </Button>
               </div>
             </div>

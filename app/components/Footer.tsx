@@ -80,15 +80,22 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                     </svg>
                   </a>
                 ) : (
-                  <Link
+                  <a
                     key={item.href}
                     href={item.href}
-                    className="group flex items-center text-gray-300 hover:text-[#2EB62C] transition-all duration-300 hover:translate-x-1"
+                    className="group flex items-center text-gray-300 hover:text-[#2EB62C] transition-all duration-300 hover:translate-x-1 cursor-pointer"
                     style={{ animationDelay: `${index * 0.1}s` }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                   >
                     <div className="w-1.5 h-1.5 bg-[#2EB62C] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {item.label}
-                  </Link>
+                  </a>
                 )
               ))}
             </nav>
@@ -160,15 +167,20 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
             {/* Enhanced Call to Action */}
             <div className="mt-8">
-              <Link
-                href="/contact"
+              <button
+                onClick={() => {
+                  const target = document.querySelector('#contact');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="group inline-flex items-center bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#2EB62C]/25"
               >
                 Get Free Quote
                 <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
