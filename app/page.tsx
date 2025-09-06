@@ -36,10 +36,14 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <About businessInfo={businessInfo} />
+      <section id="about">
+        <About businessInfo={businessInfo} />
+      </section>
 
       {/* Contact Section */}
-      <Contact businessInfo={businessInfo} />
+      <section id="contact">
+        <Contact businessInfo={businessInfo} />
+      </section>
 
       {/* Footer */}
       <Footer 

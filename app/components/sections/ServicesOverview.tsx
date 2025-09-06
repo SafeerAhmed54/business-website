@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { Service } from '@/app/types';
 import { Button } from '../ui/Button';
-import { ServiceModal } from '../ui/ServiceModal';
 
 
 interface ServicesOverviewProps {
@@ -49,7 +47,7 @@ const serviceIcons = {
 
 
 export default function ServicesOverview({ services }: ServicesOverviewProps) {
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   return (
     <section className="py-24 relative overflow-hidden bg-white">
@@ -67,73 +65,171 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
           </p>
         </div>
 
-        {/* Ultra-Compact Services Grid - All Visible at Once */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-5 border border-gray-200/60 hover:border-[#2EB62C]/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                animation: 'fadeInUp 0.6s ease-out forwards'
-              }}
-              onClick={() => setSelectedService(service)}
-            >
-              {/* Compact Header with Icon & Title */}
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 flex-shrink-0">
-                  {serviceIcons[service.id as keyof typeof serviceIcons] ? (
-                    <div className="text-white">
-                      {React.cloneElement(serviceIcons[service.id as keyof typeof serviceIcons], {
-                        className: "w-5 h-5 text-white"
-                      })}
+        {/* Expandable Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {services.map((service, index) => {
+            const isExpanded = expandedCard === service.id;
+            
+            return (
+              <div
+                key={service.id}
+                className={`group relative bg-white/95 backdrop-blur-sm rounded-2xl border transition-all duration-500 ease-in-out ${
+                  isExpanded 
+                    ? 'border-[#2EB62C]/60 shadow-2xl scale-105 bg-white' 
+                    : 'border-gray-200/60 hover:border-[#2EB62C]/40 hover:shadow-xl hover:-translate-y-2'
+                }`}
+                style={{ 
+                  animationDelay: `${index * 0.1}s`,
+                  animation: 'fadeInUp 0.6s ease-out forwards'
+                }}
+              >
+                {/* Main Card Content - Always Visible */}
+                <div 
+                  className="p-5 cursor-pointer"
+                  onClick={() => setExpandedCard(isExpanded ? null : service.id)}
+                >
+                  {/* Header with Icon & Title */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                      {serviceIcons[service.id as keyof typeof serviceIcons] ? (
+                        <div className="text-white">
+                          {React.cloneElement(serviceIcons[service.id as keyof typeof serviceIcons], {
+                            className: "w-5 h-5 text-white"
+                          })}
+                        </div>
+                      ) : (
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      )}
                     </div>
-                  ) : (
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-black group-hover:text-[#2EB62C] transition-colors duration-300 truncate">
-                    {service.title}
-                  </h3>
-                  <span className={`inline-block px-2 py-0.5 text-xs font-medium rounded-full ${
-                    service.category === 'signboard' 
-                      ? 'bg-blue-100 text-blue-700'
-                      : service.category === 'contracting'
-                      ? 'bg-orange-100 text-orange-700'
-                      : 'bg-purple-100 text-purple-700'
-                  }`}>
-                    {service.category === 'both' ? 'Combined' : service.category}
-                  </span>
-                </div>
-              </div>
-
-              {/* Compact Description */}
-              <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
-                {service.description}
-              </p>
-              
-              {/* Compact Key Features */}
-              <div className="space-y-1">
-                {service.features.slice(0, 2).map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center text-xs text-gray-700">
-                    <div className="w-1.5 h-1.5 bg-[#2EB62C] rounded-full mr-2 flex-shrink-0" />
-                    <span className="font-medium truncate">{feature}</span>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-bold text-black group-hover:text-[#2EB62C] transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <span className={`inline-block px-2 py-0.5 text-xs font-medium rounded-full ${
+                        service.category === 'signboard' 
+                          ? 'bg-blue-100 text-blue-700'
+                          : service.category === 'contracting'
+                          ? 'bg-orange-100 text-orange-700'
+                          : 'bg-purple-100 text-purple-700'
+                      }`}>
+                        {service.category === 'both' ? 'Combined' : service.category}
+                      </span>
+                    </div>
+                    {/* Expand/Collapse Icon */}
+                    <div className={`transform transition-all duration-300 ${
+                      isExpanded ? 'rotate-180 bg-[#2EB62C]/10' : 'hover:bg-gray-100'
+                    } p-2 rounded-lg`}>
+                      <svg className={`w-5 h-5 transition-colors duration-300 ${
+                        isExpanded ? 'text-[#2EB62C]' : 'text-gray-400 group-hover:text-[#2EB62C]'
+                      }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
-                ))}
-                {service.features.length > 2 && (
-                  <div className="text-xs text-gray-500 font-medium">
-                    +{service.features.length - 2} more features
-                  </div>
-                )}
-              </div>
 
-              {/* Subtle Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2EB62C]/5 to-[#4CAF50]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                    {service.description}
+                  </p>
+                  
+                  {/* Preview Features */}
+                  <div className="space-y-1">
+                    {service.features.slice(0, 2).map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center text-xs text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-[#2EB62C] rounded-full mr-2 flex-shrink-0" />
+                        <span className="font-medium truncate">{feature}</span>
+                      </div>
+                    ))}
+                    {service.features.length > 2 && !isExpanded && (
+                      <div className="text-xs text-gray-500 font-medium">
+                        +{service.features.length - 2} more features
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Expanded Content */}
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="px-6 pb-6 border-t border-gray-200/50 bg-gradient-to-br from-gray-50/50 to-white/50">
+                    {/* Full Features List */}
+                    <div className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-8 h-8 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-lg flex items-center justify-center">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h4 className="text-lg font-bold text-gray-900">What&apos;s Included</h4>
+                      </div>
+                      
+                      <div className="grid gap-3">
+                        {service.features.map((feature, featureIndex) => (
+                          <div 
+                            key={featureIndex} 
+                            className={`flex items-start gap-3 p-3 bg-white/70 rounded-lg border border-gray-100 hover:bg-white hover:shadow-sm transition-all duration-300 hover:scale-[1.02] ${
+                              isExpanded ? 'animate-in fade-in-0' : ''
+                            }`}
+                            style={{ 
+                              animationDelay: isExpanded ? `${featureIndex * 0.1}s` : '0s',
+                              animationFillMode: 'both'
+                            }}
+                          >
+                            <div className="w-5 h-5 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                            <span className="text-gray-800 font-medium text-sm leading-relaxed">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Enhanced Action Button */}
+                    <div className="pt-6">
+                      <div className="relative">
+                        <Button 
+                          className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#25a023] hover:to-[#43A047] text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#2EB62C]/25 text-base"
+                          onClick={(e) => {
+                            e.stopPropagation(); // Prevent card collapse
+                            const target = document.querySelector('#contact');
+                            if (target) {
+                              target.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }}
+                        >
+                          <div className="flex items-center justify-center gap-3">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            <span>Get Free Quote for {service.title}</span>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </div>
+                        </Button>
+                        
+                        {/* Subtle glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] rounded-2xl blur-sm opacity-20 -z-10"></div>
+                      </div>
+                      
+                      {/* Additional info */}
+                      <p className="text-center text-xs text-gray-500 mt-3">
+                        ✓ Free consultation • ✓ No obligation • ✓ Quick response
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Subtle Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2EB62C]/5 to-[#4CAF50]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              </div>
+            );
+          })}
         </div>
 
         {/* Service Stats Row */}
@@ -199,14 +295,6 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
         </div>
       </div>
 
-      {/* Service Detail Modal */}
-      {selectedService && (
-        <ServiceModal
-          service={selectedService}
-          isOpen={!!selectedService}
-          onClose={() => setSelectedService(null)}
-        />
-      )}
     </section>
   );
 }

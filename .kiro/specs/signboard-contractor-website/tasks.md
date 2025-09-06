@@ -80,24 +80,24 @@
 
 - [-] 6. Implement Portfolio page and components
 
-
-
-
   - [x] 6.1 Create portfolio gallery layout
-
-
 
     - Build portfolio page with responsive grid layout
     - Implement project cards with images, titles, and categories
     - Add category filtering functionality for project types
     - _Requirements: 2.1, 2.2_
 
-  - [-] 6.2 Build project detail modal/lightbox
+  - [x] 6.2 Build project detail modal/lightbox
+
+
+
 
     - Create image modal component for enlarged project views
     - Implement project detail overlay with descriptions and multiple images
     - Add navigation between projects within modal
     - _Requirements: 2.3_
+
+
 
 - [ ] 7. Build About page
 

@@ -74,3 +74,137 @@ export const responseTimeInfo = {
   quoteResponse: "Free quotes provided within 48 hours",
   emergencyResponse: "Emergency services available"
 };
+
+// Company history and timeline
+export const companyHistory = [
+  {
+    year: "2009",
+    title: "Company Founded",
+    description: "S&S ENTERPRISES was established with a vision to provide quality signboard and contracting services to local businesses."
+  },
+  {
+    year: "2012",
+    title: "Expanded Services",
+    description: "Added commercial contracting services to complement our signboard expertise, becoming a full-service construction company."
+  },
+  {
+    year: "2015",
+    title: "LED Technology Integration",
+    description: "Invested in modern LED signage technology and became certified in illuminated sign installation."
+  },
+  {
+    year: "2018",
+    title: "Team Growth",
+    description: "Expanded our team to include specialized contractors and designers, allowing us to handle larger projects."
+  },
+  {
+    year: "2021",
+    title: "Digital Innovation",
+    description: "Introduced digital signage solutions and modern project management systems for improved client experience."
+  },
+  {
+    year: "2024",
+    title: "15+ Years Strong",
+    description: "Celebrating over 15 years of successful projects and continued growth in the signboard and contracting industry."
+  }
+];
+
+// Team information
+export const teamInfo = {
+  founder: {
+    name: "Sarah & Steve Johnson",
+    title: "Founders & Lead Contractors",
+    experience: "15+ years",
+    description: "With over 15 years of combined experience in construction and signage, Sarah and Steve founded S&S ENTERPRISES to bring quality craftsmanship and reliable service to every project.",
+    specialties: ["Project Management", "Custom Design", "Quality Control", "Client Relations"]
+  },
+  team: [
+    {
+      name: "Mike Rodriguez",
+      title: "Senior Sign Installer",
+      experience: "8 years",
+      specialties: ["LED Installation", "Electrical Work", "Safety Compliance"]
+    },
+    {
+      name: "Lisa Chen",
+      title: "Design Specialist",
+      experience: "6 years",
+      specialties: ["Custom Design", "Brand Development", "Digital Graphics"]
+    },
+    {
+      name: "David Thompson",
+      title: "Construction Foreman",
+      experience: "10 years",
+      specialties: ["Commercial Construction", "Project Coordination", "Quality Assurance"]
+    }
+  ]
+};
+
+// Testimonials
+export const testimonials = [
+  {
+    id: "testimonial-1",
+    name: "Jennifer Martinez",
+    company: "Downtown Restaurant Group",
+    project: "Restaurant Signage Installation",
+    content: "S&S ENTERPRISES transformed our restaurant's visibility with their custom LED signage. Professional, timely, and the quality exceeded our expectations. Highly recommended!",
+    rating: 5,
+    date: "2024-01-15"
+  },
+  {
+    id: "testimonial-2",
+    name: "Robert Kim",
+    company: "TechStart Office Complex",
+    project: "Office Building Renovation",
+    content: "The team handled our complete office renovation with expertise and professionalism. They delivered on time and within budget. The attention to detail was outstanding.",
+    rating: 5,
+    date: "2023-11-20"
+  },
+  {
+    id: "testimonial-3",
+    name: "Maria Santos",
+    company: "Family Home Addition",
+    project: "Residential Construction",
+    content: "We couldn't be happier with our home addition. The team was respectful, clean, and kept us informed throughout the entire process. Quality workmanship!",
+    rating: 5,
+    date: "2023-09-30"
+  }
+];
+
+// Awards and recognition
+export const awardsAndRecognition = [
+  {
+    title: "Best Local Contractor 2023",
+    organization: "Local Business Association",
+    year: "2023"
+  },
+  {
+    title: "Excellence in Signage Design",
+    organization: "Regional Signage Association",
+    year: "2022"
+  },
+  {
+    title: "Customer Service Excellence",
+    organization: "Better Business Bureau",
+    year: "2021"
+  }
+];
+
+// Professional affiliations
+export const professionalAffiliations = [
+  {
+    name: "National Signage Association",
+    description: "Member since 2015",
+    logo: "/images/affiliations/nsa-logo.png"
+  },
+  {
+    name: "Local Contractors Guild",
+    description: "Active member since 2009",
+    logo: "/images/affiliations/lcg-logo.png"
+  },
+  {
+    name: "Better Business Bureau",
+    description: "A+ Rating since 2010",
+    logo: "/images/affiliations/bbb-logo.png"
+  }
+];

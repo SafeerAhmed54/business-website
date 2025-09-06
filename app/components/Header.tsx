@@ -43,7 +43,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 >
                   {item.label}
                 </a>
-              ) : (
+              ) : item.href.startsWith('#') ? (
                 <a
                   key={item.href}
                   href={item.href}
@@ -58,6 +58,14 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 >
                   {item.label}
                 </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
+                >
+                  {item.label}
+                </Link>
               )
             ))}
           </nav>
@@ -138,7 +146,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 >
                   {item.label}
                 </a>
-              ) : (
+              ) : item.href.startsWith('#') ? (
                 <a
                   key={item.href}
                   href={item.href}
@@ -154,6 +162,15 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 >
                   {item.label}
                 </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
               )
             ))}
             

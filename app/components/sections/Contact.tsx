@@ -10,6 +10,7 @@ interface ContactProps {
 }
 
 export default function Contact({ businessInfo }: ContactProps) {
+
   return (
     <Section id="contact" className="py-20 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,12 +164,12 @@ export default function Contact({ businessInfo }: ContactProps) {
                   className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Select a service</option>
-                  <option value="signboard">Custom Signboard Design</option>
-                  <option value="installation">Signboard Installation</option>
-                  <option value="led">LED & Illuminated Signage</option>
-                  <option value="commercial">Commercial Contracting</option>
-                  <option value="residential">Residential Construction</option>
-                  <option value="storefront">Storefront Design</option>
+                  <option value="custom-signboards">Custom Signboard Design</option>
+                  <option value="signboard-installation">Signboard Installation</option>
+                  <option value="led-illuminated-signs">LED & Illuminated Signage</option>
+                  <option value="commercial-contracting">Commercial Contracting</option>
+                  <option value="residential-construction">Residential Construction</option>
+                  <option value="storefront-design">Storefront Design & Build</option>
                 </select>
               </div>
 
