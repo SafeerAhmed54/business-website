@@ -37,35 +37,45 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-/* Custom animations for hero section */
+/* Standardized Animation System */
+:root {
+  --animation-duration-fast: 200ms;
+  --animation-duration-normal: 300ms;
+  --animation-duration-slow: 500ms;
+  --animation-duration-slower: 700ms;
+  --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Primary fadeInUp animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Standardized animation classes */
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp var(--animation-duration-normal) var(--animation-easing) forwards;
 }
 
 .animate-fade-in-up-delay {
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  animation: fadeInUp var(--animation-duration-normal) var(--animation-easing) 0.1s forwards;
   opacity: 0;
 }
 
 .animate-fade-in-up-delay-2 {
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  animation: fadeInUp var(--animation-duration-normal) var(--animation-easing) 0.2s forwards;
   opacity: 0;
 }
 
 .animate-fade-in-up-delay-3 {
-  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  animation: fadeInUp var(--animation-duration-normal) var(--animation-easing) 0.3s forwards;
   opacity: 0;
 }
 
@@ -142,11 +152,27 @@ body {
   background-clip: text;
 }
 
-/* Smooth animations for all elements */
-* {
+/* Optimized animations for interactive elements only */
+button, a, [role="button"], .transition-all {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition-duration: 300ms;
+}
+
+/* Performance optimizations for animated elements */
+.animate-fade-in-up,
+.stagger-animation,
+.animate-in,
+.hover-lift,
+.float-animation,
+.pulse-green {
+  will-change: transform, opacity;
+}
+
+/* Reset will-change after animation completes */
+.animate-fade-in-up.animation-complete,
+.stagger-animation.animation-complete {
+  will-change: auto;
 }
 
 /* Fixed Background Pattern */
@@ -285,30 +311,20 @@ body::before {
     radial-gradient(circle at 80% 80%, rgba(203, 211, 148, 0.02) 0%, transparent 50%);
 }
 
-/* Staggered animation for elements */
+/* Standardized staggered animations */
 .stagger-animation {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp var(--animation-duration-normal) var(--animation-easing) forwards;
+  opacity: 0;
 }
 
-.stagger-animation:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.stagger-animation:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.stagger-animation:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.stagger-animation:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.stagger-animation:nth-child(5) {
-  animation-delay: 0.5s;
-}
+.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation:nth-child(6) { animation-delay: 0.6s; }
+.stagger-animation:nth-child(7) { animation-delay: 0.7s; }
+.stagger-animation:nth-child(8) { animation-delay: 0.8s; }
 
 /* Subtle gradient text */
 .text-gradient-green {
@@ -605,14 +621,10 @@ alist Color Palette */
   }
 }
 
-/* Modal animations */
+/* Standardized modal animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes zoomIn {
@@ -631,9 +643,9 @@ alist Color Palette */
 }
 
 .fade-in-0 {
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn var(--animation-duration-normal) var(--animation-easing);
 }
 
 .zoom-in-95 {
-  animation: zoomIn 0.3s ease-out;
+  animation: zoomIn var(--animation-duration-normal) var(--animation-easing);
 }

@@ -10,10 +10,10 @@ interface AboutProps {
 
 export default function About({ businessInfo }: AboutProps) {
   return (
-    <Section id="about" className="py-20 bg-gray-50">
+    <Section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About {businessInfo.name}</h2>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-black mb-8 tracking-tight">About {businessInfo.name}</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {businessInfo.description}
           </p>

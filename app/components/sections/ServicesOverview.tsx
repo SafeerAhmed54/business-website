@@ -73,14 +73,14 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
             return (
               <div
                 key={service.id}
-                className={`group relative bg-white/95 backdrop-blur-sm rounded-2xl border transition-all duration-500 ease-in-out ${
+                className={`group relative bg-white/95 backdrop-blur-sm rounded-2xl border transition-all duration-300 ease-out ${
                   isExpanded 
                     ? 'border-[#2EB62C]/60 shadow-2xl scale-105 bg-white' 
                     : 'border-gray-200/60 hover:border-[#2EB62C]/40 hover:shadow-xl hover:-translate-y-2'
                 }`}
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
-                  animation: 'fadeInUp 0.6s ease-out forwards'
+                  animation: 'fadeInUp 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards'
                 }}
               >
                 {/* Main Card Content - Always Visible */}
@@ -151,7 +151,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                 </div>
 
                 {/* Expanded Content */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                <div className={`overflow-hidden transition-all duration-300 ease-out ${
                   isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className="px-6 pb-6 border-t border-gray-200/50 bg-gradient-to-br from-gray-50/50 to-white/50">
@@ -170,7 +170,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                         {service.features.map((feature, featureIndex) => (
                           <div 
                             key={featureIndex} 
-                            className={`flex items-start gap-3 p-3 bg-white/70 rounded-lg border border-gray-100 hover:bg-white hover:shadow-sm transition-all duration-300 hover:scale-[1.02] ${
+                            className={`flex items-start gap-3 p-3 bg-white/70 rounded-lg border border-gray-100 hover:bg-white hover:shadow-sm transition-all duration-200 hover:scale-[1.02] ${
                               isExpanded ? 'animate-in fade-in-0' : ''
                             }`}
                             style={{ 

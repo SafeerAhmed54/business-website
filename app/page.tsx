@@ -24,6 +24,11 @@ export default function Home() {
       <section id="hero">
         <Hero businessInfo={businessInfo} />
       </section>
+
+      {/* About Section */}
+      <section id="about">
+        <About businessInfo={businessInfo} />
+      </section>
       
       {/* Services Overview Section */}
       <section id="services">
@@ -33,11 +38,6 @@ export default function Home() {
       {/* Featured Projects Section */}
       <section id="portfolio">
         <FeaturedProjects projects={featuredProjects} />
-      </section>
-
-      {/* About Section */}
-      <section id="about">
-        <About businessInfo={businessInfo} />
       </section>
 
       {/* Contact Section */}

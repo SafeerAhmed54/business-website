@@ -15,7 +15,7 @@ export default function Contact({ businessInfo }: ContactProps) {
     <Section id="contact" className="py-20 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tight">Get In Touch</h2>
           <p className="text-xl opacity-90 max-w-3xl mx-auto">
             Ready to start your project? Contact us today for a free consultation and quote.
           </p>
