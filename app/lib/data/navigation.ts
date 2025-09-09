@@ -25,6 +25,10 @@ export const mainNavigation: NavigationItem[] = [
 
 export const footerNavigation: NavigationItem[] = [
   {
+    label: 'About',
+    href: '#about'
+  },
+  {
     label: 'Services',
     href: '#services'
   },
@@ -32,10 +36,7 @@ export const footerNavigation: NavigationItem[] = [
     label: 'Portfolio',
     href: '#portfolio'
   },
-  {
-    label: 'About',
-    href: '#about'
-  },
+
   {
     label: 'Contact',
     href: '#contact'
