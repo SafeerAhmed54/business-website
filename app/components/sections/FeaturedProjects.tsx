@@ -420,6 +420,19 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           </div>
         )}
 
+        {/* View Complete Portfolio Button */}
+        <div className="text-center mb-16">
+          <a
+            href="/portfolio"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-600/25 group"
+          >
+            <span>View Complete Portfolio</span>
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
         {/* Green CTA Section */}
         <div className="text-center">
           <div className="bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-3xl p-12 lg:p-16 text-white">

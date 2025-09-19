@@ -140,8 +140,8 @@ export const teamInfo = {
   ]
 };
 
-// Testimonials
-export const testimonials = [
+// Business testimonials (legacy - use testimonials.ts instead)
+export const businessTestimonials = [
   {
     id: "testimonial-1",
     name: "Jennifer Martinez",
