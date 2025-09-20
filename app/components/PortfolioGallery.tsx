@@ -61,17 +61,18 @@ export default function PortfolioGallery({
   return (
     <div className="w-full">
       {/* Filter Buttons */}
-      <div className="mb-12">
-        <div className="flex flex-wrap justify-center gap-4">
+      <div className="mb-8 sm:mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 px-4 sm:px-0">
           <button
             onClick={() => handleCategoryFilter("all")}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base min-h-[44px] touch-manipulation ${
               activeCategory === "all"
                 ? "bg-blue-600 text-white shadow-lg"
                 : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200"
             }`}
           >
-            All Projects ({projects.length})
+            <span className="hidden sm:inline">All Projects ({projects.length})</span>
+            <span className="sm:hidden">All ({projects.length})</span>
           </button>
           {categories.map((category) => {
             const categoryCount = projects.filter(
@@ -81,13 +82,14 @@ export default function PortfolioGallery({
               <button
                 key={category.id}
                 onClick={() => handleCategoryFilter(category.id)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base min-h-[44px] touch-manipulation ${
                   activeCategory === category.id
                     ? "bg-blue-600 text-white shadow-lg"
                     : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200"
                 }`}
               >
-                {category.name} ({categoryCount})
+                <span className="hidden sm:inline">{category.name} ({categoryCount})</span>
+                <span className="sm:hidden">{category.name.split(' ')[0]} ({categoryCount})</span>
               </button>
             );
           })}
@@ -108,7 +110,7 @@ export default function PortfolioGallery({
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}

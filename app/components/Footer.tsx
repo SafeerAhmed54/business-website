@@ -27,29 +27,29 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
         <div className="absolute bottom-10 right-1/3 w-1 h-1 bg-[#cbd394]/30 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Information */}
           <div className="lg:col-span-2">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 animated-line-double">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 animated-line-double">
               {businessInfo.name}
             </h3>
-            <p className="text-gray-600 mb-4 max-w-md text-lg">
+            <p className="text-gray-600 mb-3 sm:mb-4 max-w-md text-base sm:text-lg">
               {businessInfo.tagline}
             </p>
-            <p className="text-gray-600 mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-600 mb-4 sm:mb-6 max-w-md leading-relaxed text-sm sm:text-base">
               With {businessInfo.yearsExperience} years of experience in signboard creation and contracting services, 
               we deliver quality workmanship and professional results.
             </p>
             
             {/* Specializations */}
-            <div className="mb-6">
-              <h4 className="text-lg font-semibold mb-3 text-gray-900">Our Specializations</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="mb-4 sm:mb-6">
+              <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-900">Our Specializations</h4>
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {businessInfo.specializations.map((spec, index) => (
                   <span
                     key={index}
-                    className="bg-[#2EB62C]/10 backdrop-blur-sm text-[#2EB62C] px-4 py-2 rounded-full text-sm font-medium hover:bg-[#2EB62C]/20 transition-all duration-300 hover:scale-105 cursor-default border border-[#2EB62C]/20"
+                    className="bg-[#2EB62C]/10 backdrop-blur-sm text-[#2EB62C] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-[#2EB62C]/20 transition-all duration-300 hover:scale-105 cursor-default border border-[#2EB62C]/20"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {spec}
@@ -61,8 +61,8 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">Quick Links</h4>
-            <nav className="space-y-3" role="navigation" aria-label="Footer navigation">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900">Quick Links</h4>
+            <nav className="space-y-2 sm:space-y-3" role="navigation" aria-label="Footer navigation">
               {navigation.map((item, index) => (
                 item.external ? (
                   <a
@@ -103,18 +103,18 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
           {/* Contact Information */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900">Contact Info</h4>
-            <div className="space-y-4">
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900">Contact Info</h4>
+            <div className="space-y-3 sm:space-y-4">
               {/* Phone */}
               <div className="group flex items-start hover:translate-x-1 transition-transform duration-300">
-                <svg className="h-6 w-6 text-[#2EB62C] mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#2EB62C] mr-3 sm:mr-4 mt-1 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <div>
-                  <div className="text-sm text-gray-500 mb-1">Call Us</div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs sm:text-sm text-gray-500 mb-1">Call Us</div>
                   <a
                     href={`tel:${businessInfo.phone}`}
-                    className="text-gray-700 hover:text-[#2EB62C] transition-colors font-medium"
+                    className="text-gray-700 hover:text-[#2EB62C] transition-colors font-medium text-sm sm:text-base break-all"
                     aria-label={`Call us at ${businessInfo.phone}`}
                   >
                     {formatPhoneNumber(businessInfo.phone)}
@@ -166,7 +166,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
             </div>
 
             {/* Enhanced Call to Action */}
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <button
                 onClick={() => {
                   const target = document.querySelector('#contact');
@@ -174,10 +174,10 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                     target.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group inline-flex items-center bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#2EB62C]/25"
+                className="group inline-flex items-center bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#2EB62C]/25 text-sm sm:text-base min-h-[44px] touch-manipulation"
               >
                 Get Free Quote
-                <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -186,19 +186,19 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
         </div>
 
         {/* Enhanced Bottom Bar */}
-        <div className="border-t border-gradient-to-r from-transparent via-gray-700 to-transparent mt-12 pt-8 relative">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-[#2EB62C] to-[#cbd394]" />
+        <div className="border-t border-gradient-to-r from-transparent via-gray-700 to-transparent mt-8 sm:mt-12 pt-6 sm:pt-8 relative">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-px bg-gradient-to-r from-[#2EB62C] to-[#cbd394]" />
           
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-600 text-sm mb-4 md:mb-0 flex items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-gray-600 text-xs sm:text-sm flex items-center">
               <div className="w-2 h-2 bg-[#2EB62C] rounded-full mr-3 animate-pulse" />
               © {currentYear} {businessInfo.name}. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm text-gray-600">
-              <Link href="/privacy" className="hover:text-[#2EB62C] transition-all duration-300 hover:translate-y-[-1px]">
+            <div className="flex space-x-4 sm:space-x-6 text-xs sm:text-sm text-gray-600">
+              <Link href="/privacy" className="hover:text-[#2EB62C] transition-all duration-300 hover:translate-y-[-1px] touch-manipulation">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-[#2EB62C] transition-all duration-300 hover:translate-y-[-1px]">
+              <Link href="/terms" className="hover:text-[#2EB62C] transition-all duration-300 hover:translate-y-[-1px] touch-manipulation">
                 Terms of Service
               </Link>
             </div>

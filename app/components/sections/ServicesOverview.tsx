@@ -55,18 +55,18 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Modern Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-black mb-8 tracking-tight">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black mb-6 sm:mb-8 tracking-tight leading-tight">
             Our Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             From custom signboard design to comprehensive contracting services, 
             we deliver quality solutions tailored to your specific needs.
           </p>
         </div>
 
         {/* Expandable Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 px-4 sm:px-0">
           {services.map((service, index) => {
             const isExpanded = expandedCard === service.id;
             
@@ -85,26 +85,26 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
               >
                 {/* Main Card Content - Always Visible */}
                 <div 
-                  className="p-5 cursor-pointer"
+                  className="p-4 sm:p-5 cursor-pointer"
                   onClick={() => setExpandedCard(isExpanded ? null : service.id)}
                 >
                   {/* Header with Icon & Title */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 flex-shrink-0">
                       {serviceIcons[service.id as keyof typeof serviceIcons] ? (
                         <div className="text-white">
                           {React.cloneElement(serviceIcons[service.id as keyof typeof serviceIcons], {
-                            className: "w-5 h-5 text-white"
+                            className: "w-4 h-4 sm:w-5 sm:h-5 text-white"
                           })}
                         </div>
                       ) : (
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-bold text-black group-hover:text-[#2EB62C] transition-colors duration-300">
+                      <h3 className="text-base sm:text-lg font-bold text-black group-hover:text-[#2EB62C] transition-colors duration-300 leading-tight">
                         {service.title}
                       </h3>
                       <span className={`inline-block px-2 py-0.5 text-xs font-medium rounded-full ${
@@ -120,8 +120,8 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                     {/* Expand/Collapse Icon */}
                     <div className={`transform transition-all duration-300 ${
                       isExpanded ? 'rotate-180 bg-[#2EB62C]/10' : 'hover:bg-gray-100'
-                    } p-2 rounded-lg`}>
-                      <svg className={`w-5 h-5 transition-colors duration-300 ${
+                    } p-1.5 sm:p-2 rounded-lg touch-manipulation`}>
+                      <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${
                         isExpanded ? 'text-[#2EB62C]' : 'text-gray-400 group-hover:text-[#2EB62C]'
                       }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

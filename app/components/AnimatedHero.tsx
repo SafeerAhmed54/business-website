@@ -25,22 +25,22 @@ export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Company Name with animation */}
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-fade-in-up">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in-up leading-tight">
           {businessInfo.name}
         </h1>
 
         {/* Tagline with delayed animation */}
-        <p className="text-xl md:text-2xl mb-8 animate-fade-in-up-delay">
+        <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 animate-fade-in-up-delay px-4 sm:px-0">
           {businessInfo.tagline}
         </p>
 
         {/* Description */}
-        <p className="text-lg mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up-delay-2">
+        <p className="text-base sm:text-lg mb-8 sm:mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up-delay-2 px-4 sm:px-0 leading-relaxed">
           {businessInfo.description}
         </p>
 
         {/* Call-to-action buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-3">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-3 px-4 sm:px-0">
           <button
             onClick={() => {
               const target = document.querySelector('#contact');
@@ -48,7 +48,7 @@ export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
                 target.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+            className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation text-base sm:text-lg"
           >
             Get Free Quote
           </button>
@@ -59,7 +59,7 @@ export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
                 target.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
+            className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 min-h-[48px] touch-manipulation text-base sm:text-lg"
           >
             View Our Work
           </button>

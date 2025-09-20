@@ -12,70 +12,70 @@ export default function About({ businessInfo }: AboutProps) {
   return (
     <Section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-black mb-8 tracking-tight">About {businessInfo.name}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black mb-6 sm:mb-8 tracking-tight leading-tight">About {businessInfo.name}</h2>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {businessInfo.description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center px-4 sm:px-0">
           {/* Left side - Content */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Expertise</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Expertise</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {businessInfo.specializations.map((specialization, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[#2EB62C] rounded-full" />
-                  <span className="text-gray-700">{specialization}</span>
+                  <div className="w-2 h-2 bg-[#2EB62C] rounded-full flex-shrink-0" />
+                  <span className="text-gray-700 text-sm sm:text-base">{specialization}</span>
                 </div>
               ))}
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-lg">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose Us?</h4>
+            <div className="bg-white rounded-lg p-4 sm:p-6 shadow-lg">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Why Choose Us?</h4>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">{businessInfo.yearsExperience}+</span>
+                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-xs sm:text-sm">{businessInfo.yearsExperience}+</span>
                   </div>
-                  <span className="text-gray-700">Years of Experience</span>
+                  <span className="text-gray-700 text-sm sm:text-base">Years of Experience</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-gray-700">Licensed & Insured</span>
+                  <span className="text-gray-700 text-sm sm:text-base">Licensed & Insured</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-gray-700">Quality Guaranteed</span>
+                  <span className="text-gray-700 text-sm sm:text-base">Quality Guaranteed</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-gray-700">Free Consultations</span>
+                  <span className="text-gray-700 text-sm sm:text-base">Free Consultations</span>
                 </div>
               </div>
             </div>
 
             {/* Learn More Button */}
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <a
                 href="/about"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#25a023] hover:to-[#43A047] text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#2EB62C]/25 group"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#25a023] hover:to-[#43A047] text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#2EB62C]/25 group min-h-[48px] touch-manipulation text-sm sm:text-base"
               >
                 <span>Learn More About Us</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
@@ -83,8 +83,8 @@ export default function About({ businessInfo }: AboutProps) {
           </div>
 
           {/* Right side - Image */}
-          <div className="relative">
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative order-first lg:order-last">
+            <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="/images/about-team.jpg"
                 alt="Our professional team"

@@ -371,6 +371,101 @@ section[id] {
   scroll-margin-top: 80px;
 }
 
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+}
+
+/* Touch-friendly interactions */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Prevent text selection on interactive elements */
+button, .touch-manipulation {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Improve tap targets for mobile */
+@media (max-width: 768px) {
+  button, a, [role="button"], input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Ensure adequate spacing between tap targets */
+  .mobile-spacing > * + * {
+    margin-top: 8px;
+  }
+}
+
+/* Image optimization and lazy loading improvements */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Optimize images for mobile */
+@media (max-width: 768px) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  /* Reduce shadow complexity on mobile */
+  .shadow-lg, .shadow-xl, .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Simplify gradients on mobile for better performance */
+  .bg-gradient-to-r, .bg-gradient-to-br, .bg-gradient-to-t {
+    background-image: none;
+    background-color: var(--fallback-color, #3b82f6);
+  }
+}
+
+/* Intersection Observer loading states */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optimize font loading */
+@font-face {
+  font-display: swap;
+}
+
+/* Critical resource hints */
+.preload-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+}
+
 @keyframes pageLoad {
   from {
     opacity: 0;
