@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+
 import { BusinessInfo } from "@/app/types";
 
 interface AnimatedHeroProps {
@@ -11,8 +11,8 @@ interface AnimatedHeroProps {
 export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
-      {/* Background with radial gradient - the original one you wanted */}
-      <div></div>
+      {/* Background with Noble Enterprises gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-blue-600 to-purple-700"></div>
 
       {/* Animated background particles */}
       <div className="absolute inset-0">
@@ -48,7 +48,7 @@ export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
                 target.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation text-base sm:text-lg"
+            className="bg-white text-indigo-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation text-base sm:text-lg"
           >
             Get Free Quote
           </button>
@@ -59,7 +59,7 @@ export default function AnimatedHero({ businessInfo }: AnimatedHeroProps) {
                 target.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 min-h-[48px] touch-manipulation text-base sm:text-lg"
+            className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-300 min-h-[48px] touch-manipulation text-base sm:text-lg"
           >
             View Our Work
           </button>

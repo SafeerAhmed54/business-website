@@ -25,19 +25,19 @@ export default function AnimatedBackground({
       case 'footer':
         return (
           <>
-            <div className="absolute top-10 left-10 w-2 h-2 bg-[#2EB62C]/30 rounded-full float-animation" style={{ animationDelay: '0s' }} />
-            <div className="absolute top-20 right-20 w-1 h-1 bg-[#cbd394]/40 rounded-full float-animation" style={{ animationDelay: '1s' }} />
-            <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-[#2EB62C]/20 rounded-full float-animation" style={{ animationDelay: '2s' }} />
-            <div className="absolute bottom-10 right-1/3 w-1 h-1 bg-[#cbd394]/30 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-10 left-10 w-2 h-2 bg-indigo-600/30 rounded-full float-animation" style={{ animationDelay: '0s' }} />
+            <div className="absolute top-20 right-20 w-1 h-1 bg-blue-600/40 rounded-full float-animation" style={{ animationDelay: '1s' }} />
+            <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-indigo-600/20 rounded-full float-animation" style={{ animationDelay: '2s' }} />
+            <div className="absolute bottom-10 right-1/3 w-1 h-1 bg-blue-600/30 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
           </>
         );
       default:
         return (
           <>
-            <div className="absolute top-10 left-10 w-2 h-2 bg-[#2EB62C]/20 rounded-full float-animation" />
-            <div className="absolute top-32 right-20 w-3 h-3 bg-[#cbd394]/15 rounded-full float-animation" style={{ animationDelay: '1s' }} />
-            <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-[#2EB62C]/25 rounded-full float-animation" style={{ animationDelay: '2s' }} />
-            <div className="absolute bottom-40 right-1/3 w-2 h-2 bg-[#cbd394]/20 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-10 left-10 w-2 h-2 bg-indigo-600/20 rounded-full float-animation" />
+            <div className="absolute top-32 right-20 w-3 h-3 bg-blue-600/15 rounded-full float-animation" style={{ animationDelay: '1s' }} />
+            <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-indigo-600/25 rounded-full float-animation" style={{ animationDelay: '2s' }} />
+            <div className="absolute bottom-40 right-1/3 w-2 h-2 bg-blue-600/20 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
           </>
         );
     }

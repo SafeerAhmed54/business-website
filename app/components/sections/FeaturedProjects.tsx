@@ -141,10 +141,10 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                         <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8">
                           <div className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold text-white backdrop-blur-md border border-white/20 ${
                             project.category === 'signboard' 
-                              ? 'bg-[#2EB62C]/80' 
+                              ? 'bg-indigo-600/80' 
                               : project.category === 'contracting'
-                              ? 'bg-[#4CAF50]/80'
-                              : 'bg-[#cbd394]/80'
+                              ? 'bg-blue-600/80'
+                              : 'bg-purple-600/80'
                           }`}>
                             {project.category === 'signboard' ? 'Signboard Design' : 
                              project.category === 'contracting' ? 'Construction' : 'Full Service'}
@@ -191,8 +191,8 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                         {/* Location Info */}
                         {project.location && (
                           <div className="flex items-center text-gray-500 mb-6">
-                            <div className="w-8 h-8 bg-gradient-to-br from-[#2EB62C]/10 to-[#4CAF50]/10 rounded-full flex items-center justify-center mr-3">
-                              <svg className="w-4 h-4 text-[#2EB62C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-8 h-8 bg-gradient-to-br from-indigo-600/10 to-blue-600/10 rounded-full flex items-center justify-center mr-3">
+                              <svg className="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                               </svg>
@@ -209,7 +209,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                           <div className="flex flex-col sm:flex-row gap-3">
                             <Button 
                               size="sm"
-                              className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                              className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
                               onClick={() => {
                                 const target = document.querySelector('#contact');
                                 if (target) {
@@ -225,7 +225,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                             <Button 
                               variant="outline" 
                               size="sm" 
-                              className="border-[#2EB62C] text-[#2EB62C] hover:bg-[#2EB62C] hover:text-white"
+                              className="border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white"
                               onClick={() => {
                                 const target = document.querySelector('#about');
                                 if (target) {
@@ -281,7 +281,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             >
               <div className={`w-12 h-2 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? 'bg-gradient-to-r from-[#2EB62C] to-[#cbd394] scale-110' 
+                  ? 'bg-gradient-to-r from-indigo-600 to-blue-600 scale-110' 
                   : 'bg-gray-200 group-hover:bg-gray-300'
               }`} />
               <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -297,7 +297,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-[#2EB62C] text-[#2EB62C] hover:bg-[#2EB62C] hover:text-white font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
+              className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
               onClick={() => setShowAllProjects(true)}
             >
               View More Projects ({projects.length - featuredProjects.length} more)
@@ -322,7 +322,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                     onClick={() => setSelectedCategory(category)}
                     className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                       selectedCategory === category
-                        ? 'bg-[#2EB62C] text-white shadow-lg'
+                        ? 'bg-indigo-600 text-white shadow-lg'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
@@ -372,7 +372,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
 
                     {/* Project Info */}
                     <div className="p-6">
-                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#2EB62C] transition-colors">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
                         {project.title}
                       </h4>
                       <p className="text-gray-600 text-sm mb-4 line-clamp-2">
@@ -388,7 +388,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                       {/* CTA Button */}
                       <Button
                         size="sm"
-                        className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0"
+                        className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0"
                         onClick={() => {
                           const target = document.querySelector('#contact');
                           if (target) {
@@ -435,17 +435,17 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
 
         {/* Green CTA Section */}
         <div className="text-center">
-          <div className="bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-3xl p-12 lg:p-16 text-white">
+          <div className="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-3xl p-12 lg:p-16 text-white">
             <h3 className="text-3xl lg:text-4xl font-bold mb-6">
               Ready to bring your vision to life?
             </h3>
-            <p className="text-xl text-green-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-indigo-100 mb-10 max-w-3xl mx-auto leading-relaxed">
               Explore our complete portfolio and discover how we can help transform your ideas into reality.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 size="lg"
-                className="bg-white text-[#2EB62C] hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300 hover:scale-105 group"
+                className="bg-white text-indigo-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300 hover:scale-105 group"
                 onClick={() => {
                   const target = document.querySelector('#about');
                   if (target) {
@@ -461,7 +461,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-[#2EB62C] font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
                 onClick={() => {
                   const target = document.querySelector('#contact');
                   if (target) {

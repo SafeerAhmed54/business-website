@@ -13,7 +13,7 @@ export default function Hero({ businessInfo }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       {/* Static Background with green gradient */}
-      <div className="fixed inset-0 bg-gradient-to-br from-[#2EB62C] via-[#4CAF50] to-[#cbd394] -z-10" />
+      <div className="fixed inset-0 bg-gradient-to-br from-indigo-600 via-blue-600 to-purple-700 -z-10" />
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(46,182,44,0.2),transparent_50%)] -z-10" />
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(203,211,148,0.2),transparent_50%)] -z-10" />
 
@@ -48,7 +48,7 @@ export default function Hero({ businessInfo }: HeroProps) {
                 {/* Floating elements */}
                 <div className="absolute top-6 left-6 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-[#2EB62C] rounded-full animate-pulse" />
+                    <div className="w-3 h-3 bg-indigo-600 rounded-full animate-pulse" />
                     <span className="text-white font-semibold text-sm">Live Project</span>
                   </div>
                 </div>
@@ -62,8 +62,8 @@ export default function Hero({ businessInfo }: HeroProps) {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#2EB62C] to-[#cbd394] rounded-full opacity-20 animate-pulse" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#cbd394] to-[#2EB62C] rounded-full opacity-15 animate-bounce" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full opacity-20 animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full opacity-15 animate-bounce" />
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default function Hero({ businessInfo }: HeroProps) {
 
             {/* Tagline with gradient text */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8">
-              <span className="bg-gradient-to-r from-[#cbd394] to-white bg-clip-text text-transparent font-medium">
+              <span className="bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent font-medium">
                 {businessInfo.tagline}
               </span>
             </p>
@@ -91,7 +91,7 @@ export default function Hero({ businessInfo }: HeroProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
+                className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
                 onClick={() => {
                   const target = document.querySelector('#contact');
                   if (target) {
@@ -123,11 +123,11 @@ export default function Hero({ businessInfo }: HeroProps) {
             {/* Modern trust indicators */}
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 text-sm sm:text-base">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-                <div className="w-2 h-2 bg-[#2EB62C] rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-indigo-600 rounded-full animate-pulse" />
                 <span className="font-medium">{businessInfo.yearsExperience}+ Years Experience</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-                <div className="w-2 h-2 bg-[#cbd394] rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
                 <span className="font-medium">Licensed & Insured</span>
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">

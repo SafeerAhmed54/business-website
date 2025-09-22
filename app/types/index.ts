@@ -5,7 +5,9 @@ export interface BusinessInfo {
   tagline: string;
   phone: string;
   email: string;
+  secondaryEmail?: string;
   address: string;
+  karachiAddress?: string;
   hours: string;
   yearsExperience: number;
   description: string;

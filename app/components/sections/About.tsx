@@ -26,7 +26,7 @@ export default function About({ businessInfo }: AboutProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {businessInfo.specializations.map((specialization, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[#2EB62C] rounded-full flex-shrink-0" />
+                  <div className="w-2 h-2 bg-indigo-600 rounded-full flex-shrink-0" />
                   <span className="text-gray-700 text-sm sm:text-base">{specialization}</span>
                 </div>
               ))}
@@ -36,13 +36,13 @@ export default function About({ businessInfo }: AboutProps) {
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Why Choose Us?</h4>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-xs sm:text-sm">{businessInfo.yearsExperience}+</span>
                   </div>
                   <span className="text-gray-700 text-sm sm:text-base">Years of Experience</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -50,7 +50,7 @@ export default function About({ businessInfo }: AboutProps) {
                   <span className="text-gray-700 text-sm sm:text-base">Licensed & Insured</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -58,7 +58,7 @@ export default function About({ businessInfo }: AboutProps) {
                   <span className="text-gray-700 text-sm sm:text-base">Quality Guaranteed</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#2EB62C] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -72,7 +72,7 @@ export default function About({ businessInfo }: AboutProps) {
             <div className="mt-6 sm:mt-8">
               <a
                 href="/about"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#25a023] hover:to-[#43A047] text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#2EB62C]/25 group min-h-[48px] touch-manipulation text-sm sm:text-base"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-600/25 group min-h-[48px] touch-manipulation text-sm sm:text-base"
               >
                 <span>Learn More About Us</span>
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

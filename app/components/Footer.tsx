@@ -21,10 +21,10 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
       
       {/* Floating particles animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-2 h-2 bg-[#2EB62C]/30 rounded-full float-animation" style={{ animationDelay: '0s' }} />
-        <div className="absolute top-20 right-20 w-1 h-1 bg-[#cbd394]/40 rounded-full float-animation" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-[#2EB62C]/20 rounded-full float-animation" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-10 right-1/3 w-1 h-1 bg-[#cbd394]/30 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-10 left-10 w-2 h-2 bg-indigo-600/30 rounded-full float-animation" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-20 right-20 w-1 h-1 bg-blue-600/40 rounded-full float-animation" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 left-1/4 w-1.5 h-1.5 bg-indigo-600/20 rounded-full float-animation" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-10 right-1/3 w-1 h-1 bg-blue-600/30 rounded-full float-animation" style={{ animationDelay: '0.5s' }} />
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative">
@@ -49,7 +49,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                 {businessInfo.specializations.map((spec, index) => (
                   <span
                     key={index}
-                    className="bg-[#2EB62C]/10 backdrop-blur-sm text-[#2EB62C] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-[#2EB62C]/20 transition-all duration-300 hover:scale-105 cursor-default border border-[#2EB62C]/20"
+                    className="bg-indigo-600/10 backdrop-blur-sm text-indigo-600 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-indigo-600/20 transition-all duration-300 hover:scale-105 cursor-default border border-indigo-600/20"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {spec}
@@ -68,12 +68,12 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="group flex items-center text-gray-300 hover:text-[#2EB62C] transition-all duration-300 hover:translate-x-1"
+                    className="group flex items-center text-gray-300 hover:text-indigo-600 transition-all duration-300 hover:translate-x-1"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="w-1.5 h-1.5 bg-[#2EB62C] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {item.label}
                     <svg className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -83,7 +83,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="group flex items-center text-gray-300 hover:text-[#2EB62C] transition-all duration-300 hover:translate-x-1 cursor-pointer"
+                    className="group flex items-center text-gray-300 hover:text-indigo-600 transition-all duration-300 hover:translate-x-1 cursor-pointer"
                     style={{ animationDelay: `${index * 0.1}s` }}
                     onClick={(e) => {
                       e.preventDefault();
@@ -93,7 +93,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                       }
                     }}
                   >
-                    <div className="w-1.5 h-1.5 bg-[#2EB62C] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {item.label}
                   </a>
                 )
@@ -107,14 +107,14 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
             <div className="space-y-3 sm:space-y-4">
               {/* Phone */}
               <div className="group flex items-start hover:translate-x-1 transition-transform duration-300">
-                <svg className="h-5 w-5 sm:h-6 sm:w-6 text-[#2EB62C] mr-3 sm:mr-4 mt-1 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600 mr-3 sm:mr-4 mt-1 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <div className="min-w-0 flex-1">
                   <div className="text-xs sm:text-sm text-gray-500 mb-1">Call Us</div>
                   <a
                     href={`tel:${businessInfo.phone}`}
-                    className="text-gray-700 hover:text-[#2EB62C] transition-colors font-medium text-sm sm:text-base break-all"
+                    className="text-gray-700 hover:text-indigo-600 transition-colors font-medium text-sm sm:text-base break-all"
                     aria-label={`Call us at ${businessInfo.phone}`}
                   >
                     {formatPhoneNumber(businessInfo.phone)}
@@ -124,14 +124,14 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
               {/* Email */}
               <div className="group flex items-start hover:translate-x-1 transition-transform duration-300">
-                <svg className="h-6 w-6 text-[#2EB62C] mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6 text-indigo-600 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <div>
                   <div className="text-sm text-gray-500 mb-1">Email Us</div>
                   <a
                     href={`mailto:${businessInfo.email}`}
-                    className="text-gray-700 hover:text-[#2EB62C] transition-colors font-medium"
+                    className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
                     aria-label={`Email us at ${businessInfo.email}`}
                   >
                     {businessInfo.email}
@@ -141,7 +141,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
               {/* Address */}
               <div className="group flex items-start hover:translate-x-1 transition-transform duration-300">
-                <svg className="h-6 w-6 text-[#2EB62C] mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6 text-indigo-600 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -155,7 +155,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
               {/* Business Hours */}
               <div className="group flex items-start hover:translate-x-1 transition-transform duration-300">
-                <svg className="h-6 w-6 text-[#2EB62C] mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-6 w-6 text-indigo-600 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
@@ -174,7 +174,7 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
                     target.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group inline-flex items-center bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#2EB62C]/25 text-sm sm:text-base min-h-[44px] touch-manipulation"
+                className="group inline-flex items-center bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-600/25 text-sm sm:text-base min-h-[44px] touch-manipulation"
               >
                 Get Free Quote
                 <svg className="ml-2 h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,18 +187,18 @@ export default function Footer({ businessInfo, navigation }: FooterProps) {
 
         {/* Enhanced Bottom Bar */}
         <div className="border-t border-gradient-to-r from-transparent via-gray-700 to-transparent mt-8 sm:mt-12 pt-6 sm:pt-8 relative">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-px bg-gradient-to-r from-[#2EB62C] to-[#cbd394]" />
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-px bg-gradient-to-r from-indigo-600 to-blue-600" />
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-600 text-xs sm:text-sm flex items-center">
-              <div className="w-2 h-2 bg-[#2EB62C] rounded-full mr-3 animate-pulse" />
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mr-3 animate-pulse" />
               © {currentYear} {businessInfo.name}. All rights reserved.
             </div>
             <div className="flex space-x-4 sm:space-x-6 text-xs sm:text-sm text-gray-600">
-              <Link href="/privacy" className="hover:text-[#2EB62C] transition-all duration-300 hover:translate-y-[-1px] touch-manipulation">
+              <Link href="/privacy" className="hover:text-indigo-600 transition-all duration-300 hover:translate-y-[-1px] touch-manipulation">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-[#2EB62C] transition-all duration-300 hover:translate-y-[-1px] touch-manipulation">
+              <Link href="/terms" className="hover:text-indigo-600 transition-all duration-300 hover:translate-y-[-1px] touch-manipulation">
                 Terms of Service
               </Link>
             </div>

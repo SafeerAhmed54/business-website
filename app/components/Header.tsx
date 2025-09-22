@@ -18,13 +18,13 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-green-100">
+    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Company Name/Logo Section */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900 hover:text-[#2EB62C] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
+              <h1 className="text-2xl font-bold text-gray-900 hover:text-indigo-600 transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
                 {businessInfo.name}
               </h1>
             </Link>
@@ -37,7 +37,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
+                  className="text-gray-700 hover:text-indigo-600 font-medium transition-colors px-3 py-2 rounded-md hover:bg-indigo-50"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -47,12 +47,17 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
+                  className="text-gray-700 hover:text-indigo-600 font-medium transition-colors px-3 py-2 rounded-md hover:bg-indigo-50"
                   onClick={(e) => {
                     e.preventDefault();
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      target.scrollIntoView({ behavior: 'smooth' });
+                    // If we're not on the home page, navigate to home first
+                    if (window.location.pathname !== '/') {
+                      window.location.href = '/' + item.href;
+                    } else {
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }
                   }}
                 >
@@ -62,7 +67,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#2EB62C] font-medium transition-colors px-3 py-2 rounded-md hover:bg-green-50"
+                  className="text-gray-700 hover:text-indigo-600 font-medium transition-colors px-3 py-2 rounded-md hover:bg-indigo-50"
                 >
                   {item.label}
                 </Link>
@@ -74,14 +79,14 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href={`tel:${businessInfo.phone}`}
-              className="text-gray-700 font-semibold hover:text-[#2EB62C] transition-colors"
+              className="text-gray-700 font-semibold hover:text-indigo-600 transition-colors"
               aria-label={`Call us at ${businessInfo.phone}`}
             >
               {businessInfo.phone}
             </a>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0"
+              className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0"
               onClick={() => {
                 const target = document.querySelector('#contact');
                 if (target) {
@@ -96,7 +101,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#2EB62C]"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600"
             aria-controls="mobile-menu"
             aria-expanded={isMobileMenuOpen}
             onClick={toggleMobileMenu}
@@ -133,13 +138,13 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
           className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}
           id="mobile-menu"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-green-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-indigo-200">
             {navigation.map((item) => (
               item.external ? (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -150,13 +155,18 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsMobileMenuOpen(false);
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      target.scrollIntoView({ behavior: 'smooth' });
+                    // If we're not on the home page, navigate to home first
+                    if (window.location.pathname !== '/') {
+                      window.location.href = '/' + item.href;
+                    } else {
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }
                   }}
                 >
@@ -166,7 +176,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#2EB62C] hover:bg-green-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
@@ -175,11 +185,11 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
             ))}
             
             {/* Mobile Contact Info */}
-            <div className="border-t border-green-200 pt-4 pb-3">
+            <div className="border-t border-indigo-200 pt-4 pb-3">
               <div className="px-3 space-y-3">
                 <a
                   href={`tel:${businessInfo.phone}`}
-                  className="flex items-center text-gray-700 hover:text-[#2EB62C] font-medium"
+                  className="flex items-center text-gray-700 hover:text-indigo-600 font-medium"
                   aria-label={`Call us at ${businessInfo.phone}`}
                 >
                   <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -188,7 +198,7 @@ export default function Header({ businessInfo, navigation }: HeaderProps) {
                   {businessInfo.phone}
                 </a>
                 <Button 
-                  className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#27A844] hover:to-[#43A047] text-white border-0"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white border-0"
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     const target = document.querySelector('#contact');

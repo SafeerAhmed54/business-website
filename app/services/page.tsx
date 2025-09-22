@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { services } from '@/app/lib/data/services';
 import { businessInfo } from '@/app/lib/data/business';
+import { mainNavigation } from '@/app/lib/data/navigation';
+import { Header, Footer } from '@/app/components';
 import React from 'react';
 
 export const metadata: Metadata = {
@@ -49,7 +51,17 @@ export default function ServicesPage() {
   const contractingServices = services.filter(service => service.category === 'contracting' || service.category === 'both');
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <div className="min-h-screen relative page-transition scroll-smooth">
+      {/* Seamless unified background */}
+      <div className="fixed inset-0 bg-white -z-10" />
+      
+      {/* Header with navigation */}
+      <Header 
+        businessInfo={businessInfo} 
+        navigation={mainNavigation} 
+      />
+      
+      <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
@@ -73,19 +85,19 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#2EB62C] mb-1 sm:mb-2">{services.length}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-indigo-600 mb-1 sm:mb-2">{services.length}</div>
               <div className="text-gray-600 text-sm sm:text-base">Services Offered</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#2EB62C] mb-1 sm:mb-2">15+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-indigo-600 mb-1 sm:mb-2">15+</div>
               <div className="text-gray-600 text-sm sm:text-base">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#2EB62C] mb-1 sm:mb-2">500+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-indigo-600 mb-1 sm:mb-2">500+</div>
               <div className="text-gray-600 text-sm sm:text-base">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-[#2EB62C] mb-1 sm:mb-2">24/7</div>
+              <div className="text-2xl sm:text-3xl font-bold text-indigo-600 mb-1 sm:mb-2">24/7</div>
               <div className="text-gray-600 text-sm sm:text-base">Customer Support</div>
             </div>
           </div>
@@ -246,7 +258,7 @@ export default function ServicesPage() {
               }
             ].map((process, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-full flex items-center justify-center text-white text-lg sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full flex items-center justify-center text-white text-lg sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">
                   {process.step}
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">{process.title}</h3>
@@ -258,18 +270,18 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-[#2EB62C] to-[#4CAF50]">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-indigo-600 to-blue-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             Ready to Start Your Project?
           </h2>
-          <p className="text-lg sm:text-xl text-green-100 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-indigo-100 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
             Contact us today for a free consultation and quote. Let&apos;s bring your vision to life!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <a
               href="tel:+923315666788"
-              className="bg-white text-[#2EB62C] hover:bg-gray-100 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-2xl transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-3 min-h-[48px] touch-manipulation"
+              className="bg-white text-indigo-600 hover:bg-gray-100 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-2xl transition-all duration-300 hover:scale-105 inline-flex items-center justify-center gap-3 min-h-[48px] touch-manipulation"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -279,7 +291,7 @@ export default function ServicesPage() {
             </a>
             <a
               href="mailto:info@signboardcontractor.com"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#2EB62C] font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-2xl transition-all duration-300 inline-flex items-center justify-center gap-3 min-h-[48px] touch-manipulation"
+              className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-2xl transition-all duration-300 inline-flex items-center justify-center gap-3 min-h-[48px] touch-manipulation"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -289,6 +301,13 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      
+      {/* Footer */}
+      <Footer 
+        businessInfo={businessInfo} 
+        navigation={mainNavigation} 
+      />
+    </div>
   );
 }

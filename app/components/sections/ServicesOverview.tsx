@@ -75,8 +75,8 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                 key={service.id}
                 className={`group relative bg-white/95 backdrop-blur-sm rounded-2xl border transition-all duration-300 ease-out ${
                   isExpanded 
-                    ? 'border-[#2EB62C]/60 shadow-2xl scale-105 bg-white' 
-                    : 'border-gray-200/60 hover:border-[#2EB62C]/40 hover:shadow-xl hover:-translate-y-2'
+                    ? 'border-indigo-600/60 shadow-2xl scale-105 bg-white' 
+                    : 'border-gray-200/60 hover:border-indigo-600/40 hover:shadow-xl hover:-translate-y-2'
                 }`}
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
@@ -90,7 +90,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                 >
                   {/* Header with Icon & Title */}
                   <div className="flex items-center gap-2 sm:gap-3 mb-3">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 flex-shrink-0">
                       {serviceIcons[service.id as keyof typeof serviceIcons] ? (
                         <div className="text-white">
                           {React.cloneElement(serviceIcons[service.id as keyof typeof serviceIcons], {
@@ -104,7 +104,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-base sm:text-lg font-bold text-black group-hover:text-[#2EB62C] transition-colors duration-300 leading-tight">
+                      <h3 className="text-base sm:text-lg font-bold text-black group-hover:text-indigo-600 transition-colors duration-300 leading-tight">
                         {service.title}
                       </h3>
                       <span className={`inline-block px-2 py-0.5 text-xs font-medium rounded-full ${
@@ -119,10 +119,10 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                     </div>
                     {/* Expand/Collapse Icon */}
                     <div className={`transform transition-all duration-300 ${
-                      isExpanded ? 'rotate-180 bg-[#2EB62C]/10' : 'hover:bg-gray-100'
+                      isExpanded ? 'rotate-180 bg-indigo-600/10' : 'hover:bg-gray-100'
                     } p-1.5 sm:p-2 rounded-lg touch-manipulation`}>
                       <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${
-                        isExpanded ? 'text-[#2EB62C]' : 'text-gray-400 group-hover:text-[#2EB62C]'
+                        isExpanded ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600'
                       }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -138,7 +138,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                   <div className="space-y-1">
                     {service.features.slice(0, 2).map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center text-xs text-gray-700">
-                        <div className="w-1.5 h-1.5 bg-[#2EB62C] rounded-full mr-2 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full mr-2 flex-shrink-0" />
                         <span className="font-medium truncate">{feature}</span>
                       </div>
                     ))}
@@ -158,7 +158,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                     {/* Full Features List */}
                     <div className="pt-6">
                       <div className="flex items-center gap-2 mb-4">
-                        <div className="w-8 h-8 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-lg flex items-center justify-center">
                           <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -178,7 +178,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                               animationFillMode: 'both'
                             }}
                           >
-                            <div className="w-5 h-5 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                            <div className="w-5 h-5 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
                               <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                               </svg>
@@ -193,7 +193,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                     <div className="pt-6">
                       <div className="relative">
                         <Button 
-                          className="w-full bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] hover:from-[#25a023] hover:to-[#43A047] text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#2EB62C]/25 text-base"
+                          className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-600/25 text-base"
                           onClick={(e) => {
                             e.stopPropagation(); // Prevent card collapse
                             const target = document.querySelector('#contact');
@@ -214,7 +214,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                         </Button>
                         
                         {/* Subtle glow effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#2EB62C] to-[#4CAF50] rounded-2xl blur-sm opacity-20 -z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl blur-sm opacity-20 -z-10"></div>
                       </div>
                       
                       {/* Additional info */}
@@ -226,7 +226,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
                 </div>
 
                 {/* Subtle Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#2EB62C]/5 to-[#4CAF50]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             );
           })}
@@ -235,19 +235,19 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
         {/* Service Stats Row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
-            <div className="text-2xl font-bold text-[#2EB62C] mb-1">{services.length}</div>
+            <div className="text-2xl font-bold text-indigo-600 mb-1">{services.length}</div>
             <div className="text-sm text-gray-600 font-medium">Services</div>
           </div>
           <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
-            <div className="text-2xl font-bold text-[#2EB62C] mb-1">15+</div>
+            <div className="text-2xl font-bold text-indigo-600 mb-1">15+</div>
             <div className="text-sm text-gray-600 font-medium">Years Experience</div>
           </div>
           <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
-            <div className="text-2xl font-bold text-[#2EB62C] mb-1">500+</div>
+            <div className="text-2xl font-bold text-indigo-600 mb-1">500+</div>
             <div className="text-sm text-gray-600 font-medium">Projects</div>
           </div>
           <div className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200/50">
-            <div className="text-2xl font-bold text-[#2EB62C] mb-1">24/7</div>
+            <div className="text-2xl font-bold text-indigo-600 mb-1">24/7</div>
             <div className="text-sm text-gray-600 font-medium">Support</div>
           </div>
         </div>
@@ -267,17 +267,17 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
 
         {/* Modern Call to Action */}
         <div className="text-center">
-          <div className="bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] rounded-3xl p-12 lg:p-16 text-white">
+          <div className="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-3xl p-12 lg:p-16 text-white">
             <h3 className="text-3xl lg:text-4xl font-bold mb-6">
               Ready to get started on your project?
             </h3>
-            <p className="text-xl text-green-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-indigo-100 mb-10 max-w-3xl mx-auto leading-relaxed">
               Let&apos;s discuss your needs and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 size="lg"
-                className="bg-white text-[#2EB62C] hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300 hover:scale-105 group"
+                className="bg-white text-indigo-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300 hover:scale-105 group"
                 onClick={() => {
                   const target = document.querySelector('#contact');
                   if (target) {
@@ -293,7 +293,7 @@ export default function ServicesOverview({ services }: ServicesOverviewProps) {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-[#2EB62C] font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
                 onClick={() => {
                   const target = document.querySelector('#portfolio');
                   if (target) {

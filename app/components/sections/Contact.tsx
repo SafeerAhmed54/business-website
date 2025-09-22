@@ -12,7 +12,7 @@ interface ContactProps {
 export default function Contact({ businessInfo }: ContactProps) {
 
   return (
-    <Section id="contact" className="py-20 bg-gradient-to-br from-[#2EB62C] to-[#4CAF50] text-white">
+    <Section id="contact" className="py-20 bg-gradient-to-br from-indigo-600 to-blue-600 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 px-4 sm:px-0">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 tracking-tight leading-tight">Get In Touch</h2>
@@ -54,6 +54,11 @@ export default function Contact({ businessInfo }: ContactProps) {
                   <a href={`mailto:${businessInfo.email}`} className="text-base sm:text-lg hover:underline break-all">
                     {businessInfo.email}
                   </a>
+                  {businessInfo.secondaryEmail && (
+                    <a href={`mailto:${businessInfo.secondaryEmail}`} className="block text-sm sm:text-base hover:underline break-all opacity-90">
+                      {businessInfo.secondaryEmail}
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -68,6 +73,11 @@ export default function Contact({ businessInfo }: ContactProps) {
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold text-sm sm:text-base">Visit Us</p>
                   <p className="text-base sm:text-lg leading-relaxed">{businessInfo.address}</p>
+                  {businessInfo.karachiAddress && (
+                    <p className="text-sm sm:text-base leading-relaxed opacity-90 mt-2">
+                      <span className="font-medium">Karachi Office:</span> {businessInfo.karachiAddress}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -188,7 +198,7 @@ export default function Contact({ businessInfo }: ContactProps) {
 
               <Button 
                 type="submit"
-                className="w-full bg-white text-[#2EB62C] hover:bg-gray-100 font-semibold py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation"
+                className="w-full bg-white text-indigo-600 hover:bg-gray-100 font-semibold py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation"
               >
                 Send Message
               </Button>
