@@ -144,7 +144,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                               ? 'bg-indigo-600/80' 
                               : project.category === 'contracting'
                               ? 'bg-blue-600/80'
-                              : 'bg-purple-600/80'
+                              : 'bg-violet-600/80'
                           }`}>
                             {project.category === 'signboard' ? 'Signboard Design' : 
                              project.category === 'contracting' ? 'Construction' : 'Full Service'}
@@ -300,7 +300,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-semibold px-8 py-4 text-lg rounded-2xl transition-all duration-300"
               onClick={() => setShowAllProjects(true)}
             >
-              View More Projects ({projects.length - featuredProjects.length} more)
+              View All Projects ({projects.length - featuredProjects.length} more)
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -360,10 +360,10 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                       <div className="absolute top-4 left-4">
                         <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
                           project.category === 'signboard' 
-                            ? 'bg-blue-500 text-white'
+                            ? 'bg-indigo-600 text-white'
                             : project.category === 'contracting'
                             ? 'bg-orange-500 text-white'
-                            : 'bg-purple-500 text-white'
+                            : 'bg-violet-600 text-white'
                         }`}>
                           {project.category === 'both' ? 'Combined' : project.category}
                         </span>
@@ -420,18 +420,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           </div>
         )}
 
-        {/* View Complete Portfolio Button */}
-        <div className="text-center mb-16">
-          <a
-            href="/portfolio"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-600/25 group"
-          >
-            <span>View Complete Portfolio</span>
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
+
 
         {/* Green CTA Section */}
         <div className="text-center">

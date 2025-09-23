@@ -84,11 +84,11 @@ export default function ProjectModal({
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'signboard':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-indigo-100 text-indigo-800';
       case 'contracting':
         return 'bg-orange-100 text-orange-800';
       case 'both':
-        return 'bg-purple-100 text-purple-800';
+        return 'bg-violet-100 text-violet-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -281,7 +281,7 @@ export default function ProjectModal({
                         onClick={() => setCurrentImageIndex(index)}
                         className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-colors ${
                           currentImageIndex === index
-                            ? 'border-blue-500'
+                            ? 'border-indigo-600'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >
@@ -306,7 +306,7 @@ export default function ProjectModal({
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 bg-black bg-opacity-50 rounded-full px-4 py-2">
             <button
               onClick={() => onNavigateProject!('prev')}
-              className="text-white hover:text-blue-300 transition-colors"
+              className="text-white hover:text-indigo-300 transition-colors"
               aria-label="Previous project"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,7 +318,7 @@ export default function ProjectModal({
             </span>
             <button
               onClick={() => onNavigateProject!('next')}
-              className="text-white hover:text-blue-300 transition-colors"
+              className="text-white hover:text-indigo-300 transition-colors"
               aria-label="Next project"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

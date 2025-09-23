@@ -37,11 +37,11 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'signboard':
-        return 'bg-blue-100 text-blue-800';
+        return 'bg-indigo-100 text-indigo-800';
       case 'contracting':
         return 'bg-orange-100 text-orange-800';
       case 'both':
-        return 'bg-purple-100 text-purple-800';
+        return 'bg-violet-100 text-violet-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -133,7 +133,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
         <div className="mt-4 sm:mt-6">
           <button
             onClick={handleImageClick}
-            className="w-full bg-blue-600 text-white py-2 sm:py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
+            className="w-full bg-indigo-600 text-white py-2 sm:py-3 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium text-sm sm:text-base min-h-[44px] touch-manipulation"
           >
             View Project Details
           </button>

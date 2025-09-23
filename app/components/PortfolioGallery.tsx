@@ -67,8 +67,8 @@ export default function PortfolioGallery({
             onClick={() => handleCategoryFilter("all")}
             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base min-h-[44px] touch-manipulation ${
               activeCategory === "all"
-                ? "bg-blue-600 text-white shadow-lg"
-                : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200"
+                ? "bg-indigo-600 text-white shadow-lg"
+                : "bg-white text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 border border-gray-200"
             }`}
           >
             <span className="hidden sm:inline">All Projects ({projects.length})</span>
@@ -84,8 +84,8 @@ export default function PortfolioGallery({
                 onClick={() => handleCategoryFilter(category.id)}
                 className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base min-h-[44px] touch-manipulation ${
                   activeCategory === category.id
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200"
+                    ? "bg-indigo-600 text-white shadow-lg"
+                    : "bg-white text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 border border-gray-200"
                 }`}
               >
                 <span className="hidden sm:inline">{category.name} ({categoryCount})</span>
