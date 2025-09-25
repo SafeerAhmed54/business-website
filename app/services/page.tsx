@@ -3,12 +3,53 @@ import { services } from '@/app/lib/data/services';
 import { businessInfo } from '@/app/lib/data/business';
 import { mainNavigation } from '@/app/lib/data/navigation';
 import { Header, Footer } from '@/app/components';
+import StructuredData from '@/app/components/StructuredData';
 import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Our Services - S&S ENTERPRISES | Signboard & Contracting Services',
-  description: 'Comprehensive signboard design, installation, and contracting services. Custom solutions for businesses and residential clients with 15+ years of experience.',
-  keywords: 'signboard services, contracting services, custom signs, construction, renovation, LED signs, storefront design',
+  title: `Our Services - ${businessInfo.name} | Engineering & Contracting Solutions`,
+  description: `Comprehensive engineering and contracting services including import/export, electrical, civil, mechanical engineering, LED signboards, and government contracting with ${businessInfo.yearsExperience}+ years of experience.`,
+  keywords: [
+    'engineering services',
+    'contracting services',
+    'import export services',
+    'electrical engineering',
+    'civil engineering',
+    'mechanical engineering',
+    'LED signboards',
+    'panaflex signboards',
+    'neon signboards',
+    'government contractor',
+    'general order supplier',
+    'offset printing export',
+    'signboard installation',
+    'custom signage',
+    'rawalpindi services',
+    'karachi services'
+  ],
+  alternates: {
+    canonical: 'https://nobleenterprises.com/services',
+  },
+  openGraph: {
+    title: `Our Services - ${businessInfo.name} | Engineering & Contracting Solutions`,
+    description: `Comprehensive engineering and contracting services including import/export, electrical, civil, mechanical engineering, LED signboards, and government contracting with ${businessInfo.yearsExperience}+ years of experience.`,
+    type: 'website',
+    url: 'https://nobleenterprises.com/services',
+    images: [
+      {
+        url: '/images/services-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${businessInfo.name} Services - Engineering and Contracting Solutions`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Our Services - ${businessInfo.name}`,
+    description: `Comprehensive engineering and contracting services with ${businessInfo.yearsExperience}+ years of experience.`,
+    images: ['/images/services-og.jpg'],
+  },
 };
 
 // Service icons mapping
@@ -52,6 +93,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen relative page-transition scroll-smooth">
+      <StructuredData type="organization" pageType="services" />
       {/* Seamless unified background */}
       <div className="fixed inset-0 bg-white -z-10" />
       

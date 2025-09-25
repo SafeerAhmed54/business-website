@@ -3,6 +3,49 @@ import { NavigationItem } from '@/app/types';
 export const mainNavigation: NavigationItem[] = [
   {
     label: 'Home',
+    href: '/'
+  },
+  {
+    label: 'About',
+    href: '/about'
+  },
+  {
+    label: 'Services',
+    href: '/services'
+  },
+  {
+    label: 'Portfolio',
+    href: '/portfolio'
+  },
+  {
+    label: 'Contact',
+    href: '/contact'
+  }
+];
+
+export const footerNavigation: NavigationItem[] = [
+  {
+    label: 'About',
+    href: '/about'
+  },
+  {
+    label: 'Services',
+    href: '/services'
+  },
+  {
+    label: 'Portfolio',
+    href: '/portfolio'
+  },
+  {
+    label: 'Contact',
+    href: '/contact'
+  }
+];
+
+// Single-page navigation for homepage sections
+export const homepageNavigation: NavigationItem[] = [
+  {
+    label: 'Home',
     href: '#hero'
   },
   {
@@ -17,26 +60,6 @@ export const mainNavigation: NavigationItem[] = [
     label: 'Portfolio',
     href: '#portfolio'
   },
-  {
-    label: 'Contact',
-    href: '#contact'
-  }
-];
-
-export const footerNavigation: NavigationItem[] = [
-  {
-    label: 'About',
-    href: '#about'
-  },
-  {
-    label: 'Services',
-    href: '#services'
-  },
-  {
-    label: 'Portfolio',
-    href: '#portfolio'
-  },
-
   {
     label: 'Contact',
     href: '#contact'

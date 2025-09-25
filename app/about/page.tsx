@@ -1,13 +1,54 @@
-'use client';
-
+import { Metadata } from 'next';
 import { businessInfo, businessCredentials } from '@/app/lib/data/business';
 import { mainNavigation } from '@/app/lib/data/navigation';
 import { Header, Footer } from '@/app/components';
+import StructuredData from '@/app/components/StructuredData';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: `About ${businessInfo.name} - Engineering & Contracting Excellence`,
+  description: `Learn about ${businessInfo.name}, a leading engineering and contracting company with ${businessInfo.yearsExperience}+ years of experience in import/export, electrical, civil, and mechanical engineering services.`,
+  keywords: [
+    'about noble enterprises',
+    'engineering company history',
+    'contracting experience',
+    'import export services',
+    'electrical engineering',
+    'civil engineering',
+    'mechanical engineering',
+    'government contractor',
+    'signboard manufacturing',
+    'company credentials'
+  ],
+  alternates: {
+    canonical: 'https://nobleenterprises.com/about',
+  },
+  openGraph: {
+    title: `About ${businessInfo.name} - Engineering & Contracting Excellence`,
+    description: `Learn about ${businessInfo.name}, a leading engineering and contracting company with ${businessInfo.yearsExperience}+ years of experience in import/export, electrical, civil, and mechanical engineering services.`,
+    type: 'website',
+    url: 'https://nobleenterprises.com/about',
+    images: [
+      {
+        url: '/images/about-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: `About ${businessInfo.name} - Our team and facilities`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `About ${businessInfo.name} - Engineering & Contracting Excellence`,
+    description: `Learn about ${businessInfo.name}, a leading engineering and contracting company with ${businessInfo.yearsExperience}+ years of experience.`,
+    images: ['/images/about-og.jpg'],
+  },
+};
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen relative page-transition scroll-smooth">
+      <StructuredData type="organization" pageType="about" />
       {/* Seamless unified background */}
       <div className="fixed inset-0 bg-white -z-10" />
       
