@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { generateImageSizes, getOptimizedQuality, generateBlurPlaceholder } from '@/app/lib/utils/imageOptimization';
-import { useLazyLoading } from '@/app/lib/hooks/useLazyLoading';
+import { useIntersectionObserver } from './LazyWrapper';
+import LoadingSkeleton from './LoadingSkeleton';
 
 interface OptimizedImageProps {
   src: string;
@@ -11,15 +11,16 @@ interface OptimizedImageProps {
   width?: number;
   height?: number;
   className?: string;
-  fill?: boolean;
   priority?: boolean;
+  loading?: 'lazy' | 'eager';
   sizes?: string;
+  fill?: boolean;
   quality?: number;
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
-  loading?: 'lazy' | 'eager';
-  unoptimized?: boolean;
-  lazyLoad?: boolean;
+  onLoad?: () => void;
+  onError?: () => void;
+  fallbackSrc?: string;
 }
 
 export default function OptimizedImage({
@@ -28,94 +29,133 @@ export default function OptimizedImage({
   width,
   height,
   className = '',
-  fill = false,
   priority = false,
-  sizes,
-  quality,
-  placeholder = 'blur',
-  blurDataURL,
   loading = 'lazy',
-  unoptimized = false,
-  lazyLoad = true
+  sizes,
+  fill = false,
+  quality = 85,
+  placeholder = 'empty',
+  blurDataURL,
+  onLoad,
+  onError,
+  fallbackSrc,
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const [optimizedQuality, setOptimizedQuality] = useState(quality || 85);
+  const [currentSrc, setCurrentSrc] = useState(src);
+  const imageRef = useRef<HTMLDivElement>(null);
   
-  const { elementRef, isIntersecting } = useLazyLoading({
+  // Use intersection observer for lazy loading (unless priority is true)
+  const { hasIntersected } = useIntersectionObserver(imageRef, {
     threshold: 0.1,
-    rootMargin: '50px',
-    triggerOnce: true
+    rootMargin: '100px',
   });
 
-  useEffect(() => {
-    if (!quality) {
-      setOptimizedQuality(getOptimizedQuality());
-    }
-  }, [quality]);
+  const shouldLoad = priority || hasIntersected;
 
   const handleLoad = () => {
     setIsLoading(false);
+    onLoad?.();
   };
 
   const handleError = () => {
-    setIsLoading(false);
     setHasError(true);
+    setIsLoading(false);
+    
+    if (fallbackSrc && currentSrc !== fallbackSrc) {
+      setCurrentSrc(fallbackSrc);
+      setHasError(false);
+      setIsLoading(true);
+    } else {
+      // Try a generic placeholder as last resort
+      const genericPlaceholder = `data:image/svg+xml;base64,${Buffer.from(
+        `<svg width="${width || 400}" height="${height || 300}" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="#f3f4f6"/>
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9ca3af">
+            Image not available
+          </text>
+        </svg>`
+      ).toString('base64')}`;
+      
+      if (currentSrc !== genericPlaceholder) {
+        setCurrentSrc(genericPlaceholder);
+        setHasError(false);
+        setIsLoading(true);
+      } else {
+        onError?.();
+      }
+    }
   };
 
-  const finalSizes = sizes || generateImageSizes();
-  const finalBlurDataURL = blurDataURL || generateBlurPlaceholder(width, height);
-  
-  // Don't render image until it's in viewport (if lazy loading is enabled)
-  const shouldRender = !lazyLoad || priority || isIntersecting;
+  // Generate a simple blur placeholder if none provided
+  const generateBlurDataURL = (w: number = 10, h: number = 10) => {
+    return `data:image/svg+xml;base64,${Buffer.from(
+      `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#f3f4f6"/>
+      </svg>`
+    ).toString('base64')}`;
+  };
 
-  if (hasError) {
-    return (
-      <div className={`bg-gray-200 flex items-center justify-center ${className}`}>
-        <div className="text-center text-gray-400 p-4">
-          <svg className="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <p className="text-sm">Image not available</p>
-        </div>
-      </div>
-    );
-  }
+  const imageProps = {
+    src: currentSrc,
+    alt,
+    className: `transition-opacity duration-300 ${
+      isLoading ? 'opacity-0' : 'opacity-100'
+    } ${className}`,
+    onLoad: handleLoad,
+    onError: handleError,
+    quality,
+    ...(width && { width }),
+    ...(height && { height }),
+    ...(fill && { fill: true }),
+    ...(sizes && { sizes }),
+    ...(priority && { priority: true }),
+    ...(loading && !priority && { loading }),
+    ...(placeholder === 'blur' && {
+      placeholder: 'blur' as const,
+      blurDataURL: blurDataURL || generateBlurDataURL(width, height),
+    }),
+  };
 
   return (
-    <div ref={elementRef} className={`relative ${className}`}>
-      {shouldRender ? (
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          fill={fill}
-          priority={priority}
-          sizes={finalSizes}
-          quality={optimizedQuality}
-          placeholder={placeholder}
-          blurDataURL={finalBlurDataURL}
-          loading={priority ? 'eager' : loading}
-          unoptimized={unoptimized}
-          className={`transition-opacity duration-300 ${
-            isLoading ? 'opacity-0' : 'opacity-100'
-          } object-cover`}
-          onLoad={handleLoad}
-          onError={handleError}
-        />
-      ) : (
-        // Placeholder while waiting for intersection
-        <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
-          <div className="text-gray-400 text-sm">Loading...</div>
+    <div ref={imageRef} className={`relative ${fill ? 'w-full h-full' : ''}`}>
+      {/* Loading skeleton */}
+      {isLoading && shouldLoad && (
+        <div className="absolute inset-0 z-10">
+          <LoadingSkeleton
+            variant="rectangular"
+            className="w-full h-full"
+            width={width}
+            height={height}
+          />
         </div>
       )}
-      
-      {/* Loading skeleton */}
-      {isLoading && shouldRender && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-          <div className="w-6 h-6 sm:w-8 sm:h-8 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+
+      {/* Error state */}
+      {hasError && !fallbackSrc && (
+        <div className="flex items-center justify-center bg-gray-100 text-gray-400 w-full h-full min-h-[200px]">
+          <div className="text-center">
+            <svg
+              className="w-12 h-12 mx-auto mb-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1}
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <p className="text-sm">Image not available</p>
+          </div>
         </div>
+      )}
+
+      {/* Actual image */}
+      {shouldLoad && !hasError && (
+        <Image {...imageProps} />
       )}
     </div>
   );

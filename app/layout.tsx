@@ -8,11 +8,16 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false, // Only preload if actually used
+  fallback: ['monospace'],
 });
 
 export const metadata: Metadata = {
@@ -104,11 +109,71 @@ export default function RootLayout({
       <head>
         <StructuredData type="organization" />
         <StructuredData type="website" />
+        {/* Resource hints for better performance */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload critical CSS */}
+        <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body
         className={`${inter.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        
+        {/* No-script fallback */}
+        <noscript>
+          <div className="fixed inset-0 bg-yellow-50 z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-lg shadow-lg p-6 max-w-md text-center">
+              <div className="text-yellow-500 mb-4">
+                <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+              </div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">JavaScript Required</h2>
+              <p className="text-gray-600 mb-4">
+                This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.
+              </p>
+              <button 
+                onClick="window.location.reload()"
+                className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+              >
+                Reload Page
+              </button>
+            </div>
+          </div>
+        </noscript>
+        
+        {/* Performance monitoring script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Basic performance monitoring
+              if ('performance' in window) {
+                window.addEventListener('load', function() {
+                  setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (perfData) {
+                      console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                    }
+                  }, 0);
+                });
+              }
+              
+              // Error tracking
+              window.addEventListener('error', function(e) {
+                console.error('Global error:', e.error);
+                // You can send this to an error tracking service
+              });
+              
+              window.addEventListener('unhandledrejection', function(e) {
+                console.error('Unhandled promise rejection:', e.reason);
+                // You can send this to an error tracking service
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );
