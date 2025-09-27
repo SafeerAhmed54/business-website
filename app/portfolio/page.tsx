@@ -4,7 +4,7 @@ import { mainNavigation } from '@/app/lib/data/navigation';
 import { Header, Footer } from '@/app/components';
 import StructuredData from '@/app/components/StructuredData';
 import PortfolioGallery from '@/app/components/PortfolioGallery';
-import { getAllProjects } from '@/app/lib/data/projects';
+import { getAllProjects, projectCategories } from '@/app/lib/data/projects';
 
 export const metadata: Metadata = {
   title: `Portfolio - ${businessInfo.name} | Our Engineering & Contracting Projects`,
@@ -52,6 +52,7 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   const projects = getAllProjects();
+  const categories = projectCategories;
 
   return (
     <div className="min-h-screen relative page-transition scroll-smooth">
@@ -87,7 +88,7 @@ export default function PortfolioPage() {
         {/* Portfolio Gallery */}
         <section className="py-16 sm:py-20">
           <div className="container mx-auto px-4">
-            <PortfolioGallery projects={projects} />
+            <PortfolioGallery projects={projects} categories={categories} />
           </div>
         </section>
 

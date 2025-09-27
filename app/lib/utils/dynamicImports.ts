@@ -19,14 +19,15 @@ export const DynamicProjectModal = lazy(() =>
   }))
 );
 
-export const DynamicContactForm = lazy(() => 
-  import('@/app/components/ContactForm').then(module => ({
-    default: module.default
-  }))
-);
+// ContactForm component will be implemented later
+// export const DynamicContactForm = lazy(() => 
+//   import('@/app/components/ContactForm').then(module => ({
+//     default: module.default
+//   }))
+// );
 
 // Utility function for preloading components
-export const preloadComponent = (importFn: () => Promise<any>) => {
+export const preloadComponent = (importFn: () => Promise<unknown>) => {
   const componentImport = importFn();
   return componentImport;
 };
@@ -41,13 +42,13 @@ export const preloadCriticalComponents = () => {
     }, { once: true });
   });
 
-  // Preload contact form when user hovers over contact link
-  const contactLinks = document.querySelectorAll('[href*="contact"], [data-scroll-to="contact"]');
-  contactLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      preloadComponent(() => import('@/app/components/ContactForm'));
-    }, { once: true });
-  });
+  // Contact form preloading will be implemented later
+  // const contactLinks = document.querySelectorAll('[href*="contact"], [data-scroll-to="contact"]');
+  // contactLinks.forEach(link => {
+  //   link.addEventListener('mouseenter', () => {
+  //     preloadComponent(() => import('@/app/components/ContactForm'));
+  //   }, { once: true });
+  // });
 };
 
 // Resource hints for better performance

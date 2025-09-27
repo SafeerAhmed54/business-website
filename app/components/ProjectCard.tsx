@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Project } from '@/app/types';
 import OptimizedImage from './ui/OptimizedImage';
 
@@ -10,8 +10,8 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, onImageClick }: ProjectCardProps) {
-  const [imageError, setImageError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [imageError, setImageError] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -63,7 +63,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-300"
-          lazyLoad={true}
+          loading="lazy"
         />
         
         {/* Image Count Badge */}

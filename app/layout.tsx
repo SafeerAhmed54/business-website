@@ -136,7 +136,7 @@ export default function RootLayout({
                 This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.
               </p>
               <button 
-                onClick="window.location.reload()"
+                onClick={() => window.location.reload()}
                 className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Reload Page

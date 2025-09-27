@@ -46,7 +46,7 @@ export default function OptimizedImage({
   const imageRef = useRef<HTMLDivElement>(null);
   
   // Use intersection observer for lazy loading (unless priority is true)
-  const { hasIntersected } = useIntersectionObserver(imageRef, {
+  const { hasIntersected } = useIntersectionObserver(imageRef as React.RefObject<Element>, {
     threshold: 0.1,
     rootMargin: '100px',
   });

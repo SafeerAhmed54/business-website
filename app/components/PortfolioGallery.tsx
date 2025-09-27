@@ -33,7 +33,7 @@ export default function PortfolioGallery({
     }
   };
 
-  const handleProjectClick = (project: Project, imageIndex: number = 0) => {
+  const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
     setCurrentProjectIndex(
       filteredProjects.findIndex((p) => p.id === project.id)

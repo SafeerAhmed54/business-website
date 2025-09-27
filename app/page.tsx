@@ -35,7 +35,6 @@ const FeaturedProjects = dynamic(
         </div>
       </section>
     ),
-    ssr: false,
   }
 );
 

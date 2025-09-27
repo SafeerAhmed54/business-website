@@ -159,3 +159,7 @@ export const getProjectById = (id: string): Project | undefined => {
 export const getProjectsByClientType = (clientType: string): Project[] => {
   return projects.filter(project => project.clientType === clientType);
 };
+
+export const getAllProjects = (): Project[] => {
+  return projects;
+};
