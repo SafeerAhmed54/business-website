@@ -6,7 +6,7 @@ import OptimizedImage from './ui/OptimizedImage';
 
 interface ProjectCardProps {
   project: Project;
-  onImageClick?: (project: Project, imageIndex: number) => void;
+  onImageClick?: (project: Project) => void;
 }
 
 export default function ProjectCard({ project, onImageClick }: ProjectCardProps) {
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
 
   const handleImageClick = () => {
     if (onImageClick) {
-      onImageClick(project, 0);
+      onImageClick(project);
     }
   };
 
