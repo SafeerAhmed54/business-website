@@ -1,25 +1,41 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function NavigationProgress() {
   const [activeSection, setActiveSection] = useState('hero');
+  const pathname = usePathname();
+  
+  // Only show on homepage
+  if (pathname !== '/') {
+    return null;
+  }
 
   useEffect(() => {
     const sections = ['hero', 'about', 'services', 'portfolio', 'contact'];
     
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -80% 0px',
-      threshold: 0
+      rootMargin: '-10% 0px -60% 0px', // Less restrictive margins
+      threshold: 0.1 // Require 10% visibility
     };
 
     const observer = new IntersectionObserver((entries) => {
+      // Find the entry with the largest intersection ratio
+      let maxRatio = 0;
+      let activeEntry = null;
+      
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          activeEntry = entry;
         }
       });
+      
+      if (activeEntry) {
+        setActiveSection(activeEntry.target.id);
+      }
     }, observerOptions);
 
     sections.forEach((sectionId) => {
@@ -29,7 +45,35 @@ export default function NavigationProgress() {
       }
     });
 
-    return () => observer.disconnect();
+    // Fallback scroll listener for better reliability
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + rect.height;
+          
+          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    // Initial check
+    handleScroll();
+    
+    // Add scroll listener as backup
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const sections = [
@@ -41,7 +85,7 @@ export default function NavigationProgress() {
   ];
 
   return (
-    <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+    <div className="fixed right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
       <div className="flex flex-col space-y-3">
         {sections.map((section) => (
           <button
