@@ -67,20 +67,63 @@ export default function PortfolioPage() {
       />
       
       <main className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-16 sm:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-                Our Portfolio
+        {/* Enhanced Hero Section */}
+        <section className="relative bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-700 text-white py-20 sm:py-28 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                               radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%)`
+            }}></div>
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-white/3 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <span>Portfolio Showcase</span>
+                </div>
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-white via-blue-100 to-violet-100 bg-clip-text text-transparent">
+                  Our Portfolio
+                </span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-indigo-100 mb-6 sm:mb-8">
+              
+              <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-8 sm:mb-10 font-medium">
                 Showcasing {businessInfo.yearsExperience}+ years of engineering excellence
               </p>
-              <p className="text-base sm:text-lg text-indigo-200 max-w-3xl mx-auto leading-relaxed">
+              
+              <p className="text-lg sm:text-xl text-blue-200 max-w-4xl mx-auto leading-relaxed mb-12">
                 Explore our completed projects across engineering disciplines, signboard manufacturing, 
                 and contracting services that demonstrate our commitment to quality and innovation.
               </p>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{projects.length}+</div>
+                  <div className="text-blue-200 text-sm">Projects</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{businessInfo.yearsExperience}+</div>
+                  <div className="text-blue-200 text-sm">Years</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{categories.length}</div>
+                  <div className="text-blue-200 text-sm">Categories</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">100%</div>
+                  <div className="text-blue-200 text-sm">Quality</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

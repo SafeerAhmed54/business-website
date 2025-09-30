@@ -6,13 +6,12 @@ import { usePathname } from 'next/navigation';
 export default function NavigationProgress() {
   const [activeSection, setActiveSection] = useState('hero');
   const pathname = usePathname();
-  
-  // Only show on homepage
-  if (pathname !== '/') {
-    return null;
-  }
 
   useEffect(() => {
+    // Only run effect on homepage
+    if (pathname !== '/') {
+      return;
+    }
     const sections = ['hero', 'about', 'services', 'portfolio', 'contact'];
     
     const observerOptions = {
@@ -74,7 +73,12 @@ export default function NavigationProgress() {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [pathname]);
+
+  // Only show on homepage
+  if (pathname !== '/') {
+    return null;
+  }
 
   const sections = [
     { id: 'hero', label: 'Home' },
@@ -86,29 +90,50 @@ export default function NavigationProgress() {
 
   return (
     <div className="fixed right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-30 hidden md:block">
-      <div className="flex flex-col space-y-3">
-        {sections.map((section) => (
-          <button
-            key={section.id}
-            onClick={() => {
-              const element = document.getElementById(section.id);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className={`group relative w-3 h-3 rounded-full transition-all duration-300 ${
-              activeSection === section.id
-                ? 'bg-gradient-to-r from-indigo-600 to-blue-600 scale-125'
-                : 'bg-gray-300 hover:bg-gray-400'
-            }`}
-            aria-label={`Navigate to ${section.label} section`}
-          >
-            {/* Tooltip */}
-            <span className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
-              {section.label}
-            </span>
-          </button>
-        ))}
+      {/* Background container with glassmorphism */}
+      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-white/20">
+        <div className="flex flex-col space-y-4">
+          {sections.map((section, index) => (
+            <button
+              key={section.id}
+              onClick={() => {
+                const element = document.getElementById(section.id);
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className={`group relative w-4 h-4 rounded-full transition-all duration-500 ease-out transform hover:scale-110 ${
+                activeSection === section.id
+                  ? 'bg-gradient-to-r from-indigo-600 via-blue-600 to-violet-600 scale-125 shadow-lg shadow-indigo-500/30'
+                  : 'bg-gray-300/60 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-blue-400 hover:shadow-md'
+              }`}
+              aria-label={`Navigate to ${section.label} section`}
+            >
+              {/* Active indicator ring */}
+              {activeSection === section.id && (
+                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full opacity-30 animate-pulse"></div>
+              )}
+              
+              {/* Progress line connector */}
+              {index < sections.length - 1 && (
+                <div className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0.5 h-4 transition-all duration-300 ${
+                  sections.findIndex(s => s.id === activeSection) > index
+                    ? 'bg-gradient-to-b from-indigo-600 to-blue-600'
+                    : 'bg-gray-200'
+                }`}></div>
+              )}
+              
+              {/* Enhanced tooltip */}
+              <div className="absolute right-8 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+                <div className="bg-gray-900/90 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-xl shadow-xl border border-gray-700/50 whitespace-nowrap">
+                  <span className="font-medium">{section.label}</span>
+                  {/* Tooltip arrow */}
+                  <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-gray-900/90 border-y-4 border-y-transparent"></div>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
