@@ -75,3 +75,15 @@ This feature involves creating a professional business website for a signboard a
 1. WHEN visitors interact with the site THEN the system SHALL include clear call-to-action buttons throughout
 2. WHEN visitors are interested in services THEN the system SHALL provide easy ways to request quotes or consultations
 3. WHEN visitors want to follow up THEN the system SHALL capture lead information through forms or contact methods
+
+### Requirement 8
+
+**User Story:** As a potential customer, I want to have quick access to important information while browsing the site, so that I can easily navigate or contact the business without scrolling back to the top.
+
+#### Acceptance Criteria
+
+1. WHEN a visitor scrolls through any page THEN the system SHALL display a sticky sidebar on the right side that remains visible
+2. WHEN the sticky sidebar is displayed THEN the system SHALL include quick contact information, navigation links, or call-to-action buttons
+3. WHEN viewed on desktop THEN the system SHALL position the sidebar to not interfere with main content readability
+4. WHEN viewed on mobile devices THEN the system SHALL either adapt the sidebar appropriately or hide it to maintain mobile usability
+5. WHEN the sidebar is present THEN the system SHALL ensure it enhances rather than distracts from the user experience

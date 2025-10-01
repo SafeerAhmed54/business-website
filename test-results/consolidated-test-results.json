@@ -1,0 +1,1785 @@
+{
+  "timestamp": "2025-10-01T18:54:55.669Z",
+  "summary": {
+    "overall": {
+      "total": 201,
+      "passed": 150,
+      "failed": 1,
+      "warnings": 50,
+      "score": 75
+    },
+    "categories": {
+      "cross-browser-test": {
+        "total": 26,
+        "passed": 24,
+        "failed": 0,
+        "warnings": 2
+      },
+      "responsive-test": {
+        "total": 44,
+        "passed": 39,
+        "failed": 0,
+        "warnings": 5
+      },
+      "forms-navigation": {
+        "total": 46,
+        "passed": 32,
+        "failed": 1,
+        "warnings": 13
+      },
+      "accessibility-performance": {
+        "total": 85,
+        "passed": 55,
+        "failed": 0,
+        "warnings": 30
+      }
+    }
+  },
+  "results": {
+    "cross-browser-test": {
+      "timestamp": "2025-10-01T18:45:01.321Z",
+      "summary": {
+        "total": 26,
+        "passed": 24,
+        "failed": 0,
+        "warnings": 2
+      },
+      "tests": [
+        {
+          "test": "Responsive Design Configuration",
+          "status": "passed",
+          "message": "Tailwind responsive breakpoints are configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.507Z"
+        },
+        {
+          "test": "Responsive Classes - Header.tsx",
+          "status": "passed",
+          "message": "Component includes responsive classes",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.507Z"
+        },
+        {
+          "test": "Responsive Classes - Footer.tsx",
+          "status": "passed",
+          "message": "Component includes responsive classes",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.508Z"
+        },
+        {
+          "test": "Responsive Classes - Hero.tsx",
+          "status": "passed",
+          "message": "Component includes responsive classes",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.508Z"
+        },
+        {
+          "test": "Navigation Structure",
+          "status": "passed",
+          "message": "All required navigation items are present",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.509Z"
+        },
+        {
+          "test": "Mobile Navigation",
+          "status": "passed",
+          "message": "Mobile navigation menu is implemented",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.509Z"
+        },
+        {
+          "test": "Contact Form - Contact.tsx",
+          "status": "warning",
+          "message": "Contact form exists but validation may be missing",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.510Z"
+        },
+        {
+          "test": "Image Optimization - Hero.tsx",
+          "status": "warning",
+          "message": "Uses regular img tags instead of Next.js Image component",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.511Z"
+        },
+        {
+          "test": "Image Optimization - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Uses Next.js Image component for optimization",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.511Z"
+        },
+        {
+          "test": "Image Assets",
+          "status": "passed",
+          "message": "Found 22 image assets in public directory",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.515Z"
+        },
+        {
+          "test": "Loading States - LoadingSkeleton.tsx",
+          "status": "passed",
+          "message": "Loading state component exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.516Z"
+        },
+        {
+          "test": "Loading States - loading.tsx",
+          "status": "passed",
+          "message": "Loading state component exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.517Z"
+        },
+        {
+          "test": "Error Handling",
+          "status": "passed",
+          "message": "Error boundary component exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.517Z"
+        },
+        {
+          "test": "Code Splitting - page.tsx",
+          "status": "passed",
+          "message": "Uses dynamic imports for code splitting",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.518Z"
+        },
+        {
+          "test": "SEO Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.518Z"
+        },
+        {
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.518Z"
+        },
+        {
+          "test": "SEO Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "SEO Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "SEO Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "SEO Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.519Z"
+        },
+        {
+          "test": "Sitemap",
+          "status": "passed",
+          "message": "Sitemap configuration exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.520Z"
+        },
+        {
+          "test": "Robots.txt",
+          "status": "passed",
+          "message": "Robots.txt configuration exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:45:01.520Z"
+        }
+      ]
+    },
+    "responsive-test": {
+      "timestamp": "2025-10-01T18:49:00.098Z",
+      "devices": [
+        {
+          "category": "device",
+          "test": "iPhone SE Compatibility",
+          "status": "passed",
+          "message": "Device (375x667) maps to base breakpoint",
+          "details": {
+            "width": 375,
+            "height": 667,
+            "breakpoint": "base",
+            "userAgent": "iPhone"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "iPhone 12 Compatibility",
+          "status": "passed",
+          "message": "Device (390x844) maps to base breakpoint",
+          "details": {
+            "width": 390,
+            "height": 844,
+            "breakpoint": "base",
+            "userAgent": "iPhone"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "iPhone 14 Pro Max Compatibility",
+          "status": "passed",
+          "message": "Device (430x932) maps to base breakpoint",
+          "details": {
+            "width": 430,
+            "height": 932,
+            "breakpoint": "base",
+            "userAgent": "iPhone"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Samsung Galaxy S21 Compatibility",
+          "status": "passed",
+          "message": "Device (384x854) maps to base breakpoint",
+          "details": {
+            "width": 384,
+            "height": 854,
+            "breakpoint": "base",
+            "userAgent": "Android"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Google Pixel 6 Compatibility",
+          "status": "passed",
+          "message": "Device (393x851) maps to base breakpoint",
+          "details": {
+            "width": 393,
+            "height": 851,
+            "breakpoint": "base",
+            "userAgent": "Android"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "iPad Compatibility",
+          "status": "passed",
+          "message": "Device (768x1024) maps to md breakpoint",
+          "details": {
+            "width": 768,
+            "height": 1024,
+            "breakpoint": "md",
+            "userAgent": "iPad"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "iPad Pro 11\" Compatibility",
+          "status": "passed",
+          "message": "Device (834x1194) maps to md breakpoint",
+          "details": {
+            "width": 834,
+            "height": 1194,
+            "breakpoint": "md",
+            "userAgent": "iPad"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "iPad Pro 12.9\" Compatibility",
+          "status": "passed",
+          "message": "Device (1024x1366) maps to lg breakpoint",
+          "details": {
+            "width": 1024,
+            "height": 1366,
+            "breakpoint": "lg",
+            "userAgent": "iPad"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Samsung Galaxy Tab Compatibility",
+          "status": "passed",
+          "message": "Device (800x1280) maps to md breakpoint",
+          "details": {
+            "width": 800,
+            "height": 1280,
+            "breakpoint": "md",
+            "userAgent": "Android"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Small Desktop Compatibility",
+          "status": "passed",
+          "message": "Device (1366x768) maps to xl breakpoint",
+          "details": {
+            "width": 1366,
+            "height": 768,
+            "breakpoint": "xl",
+            "userAgent": "Desktop"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Standard Desktop Compatibility",
+          "status": "passed",
+          "message": "Device (1920x1080) maps to 2xl breakpoint",
+          "details": {
+            "width": 1920,
+            "height": 1080,
+            "breakpoint": "2xl",
+            "userAgent": "Desktop"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Large Desktop Compatibility",
+          "status": "passed",
+          "message": "Device (2560x1440) maps to 2xl breakpoint",
+          "details": {
+            "width": 2560,
+            "height": 1440,
+            "breakpoint": "2xl",
+            "userAgent": "Desktop"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        },
+        {
+          "category": "device",
+          "test": "Ultra Wide Compatibility",
+          "status": "passed",
+          "message": "Device (3440x1440) maps to 2xl breakpoint",
+          "details": {
+            "width": 3440,
+            "height": 1440,
+            "breakpoint": "2xl",
+            "userAgent": "Desktop"
+          },
+          "timestamp": "2025-10-01T18:49:00.145Z"
+        }
+      ],
+      "breakpoints": [
+        {
+          "category": "breakpoint",
+          "test": "Tailwind sm breakpoint",
+          "status": "warning",
+          "message": "sm breakpoint may not be explicitly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.137Z"
+        },
+        {
+          "category": "breakpoint",
+          "test": "Tailwind md breakpoint",
+          "status": "warning",
+          "message": "md breakpoint may not be explicitly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.137Z"
+        },
+        {
+          "category": "breakpoint",
+          "test": "Tailwind lg breakpoint",
+          "status": "warning",
+          "message": "lg breakpoint may not be explicitly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.137Z"
+        },
+        {
+          "category": "breakpoint",
+          "test": "Tailwind xl breakpoint",
+          "status": "warning",
+          "message": "xl breakpoint may not be explicitly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.137Z"
+        },
+        {
+          "category": "breakpoint",
+          "test": "Tailwind 2xl breakpoint",
+          "status": "warning",
+          "message": "2xl breakpoint may not be explicitly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.137Z"
+        }
+      ],
+      "components": [
+        {
+          "category": "component",
+          "test": "Responsive Design - Header.tsx",
+          "status": "passed",
+          "message": "Component has 6 responsive classes",
+          "details": {
+            "Mobile First": 1,
+            "Tablet": 4,
+            "Desktop": 1,
+            "Large Desktop": 0,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.138Z"
+        },
+        {
+          "category": "component",
+          "test": "Mobile Optimization - Header.tsx",
+          "status": "passed",
+          "message": "Component includes mobile-specific optimizations",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.138Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - Header.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.139Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Design - Footer.tsx",
+          "status": "passed",
+          "message": "Component has 44 responsive classes",
+          "details": {
+            "Mobile First": 39,
+            "Tablet": 2,
+            "Desktop": 3,
+            "Large Desktop": 0,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.139Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - Footer.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.139Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Design - Hero.tsx",
+          "status": "passed",
+          "message": "Component has 20 responsive classes",
+          "details": {
+            "Mobile First": 7,
+            "Tablet": 3,
+            "Desktop": 10,
+            "Large Desktop": 0,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.140Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - Hero.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.140Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Design - ServicesOverview.tsx",
+          "status": "passed",
+          "message": "Component has 32 responsive classes",
+          "details": {
+            "Mobile First": 23,
+            "Tablet": 1,
+            "Desktop": 7,
+            "Large Desktop": 1,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.140Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - ServicesOverview.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.141Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Design - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Component has 69 responsive classes",
+          "details": {
+            "Mobile First": 42,
+            "Tablet": 2,
+            "Desktop": 22,
+            "Large Desktop": 3,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.142Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.143Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Design - Contact.tsx",
+          "status": "passed",
+          "message": "Component has 64 responsive classes",
+          "details": {
+            "Mobile First": 57,
+            "Tablet": 1,
+            "Desktop": 5,
+            "Large Desktop": 1,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.143Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - Contact.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.143Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Design - PortfolioGallery.tsx",
+          "status": "passed",
+          "message": "Component has 18 responsive classes",
+          "details": {
+            "Mobile First": 16,
+            "Tablet": 0,
+            "Desktop": 2,
+            "Large Desktop": 0,
+            "Extra Large": 0
+          },
+          "timestamp": "2025-10-01T18:49:00.144Z"
+        },
+        {
+          "category": "component",
+          "test": "Touch Optimization - PortfolioGallery.tsx",
+          "status": "passed",
+          "message": "Component includes touch-friendly sizing",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.144Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Grid - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive grid layouts",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.146Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Spacing - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive spacing patterns",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.146Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Grid - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive grid layouts",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.147Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Spacing - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive spacing patterns",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.147Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Typography - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive typography scaling",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.147Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Spacing - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive spacing patterns",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.147Z"
+        },
+        {
+          "category": "component",
+          "test": "Responsive Typography - page.tsx",
+          "status": "passed",
+          "message": "Page uses responsive typography scaling",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.147Z"
+        },
+        {
+          "category": "component",
+          "test": "Accessibility - Header.tsx",
+          "status": "passed",
+          "message": "Component includes ARIA labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.148Z"
+        },
+        {
+          "category": "component",
+          "test": "Keyboard Navigation - Header.tsx",
+          "status": "passed",
+          "message": "Component supports keyboard navigation",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.148Z"
+        },
+        {
+          "category": "component",
+          "test": "Focus Management - Header.tsx",
+          "status": "passed",
+          "message": "Component includes focus management",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.148Z"
+        },
+        {
+          "category": "component",
+          "test": "Focus Management - Contact.tsx",
+          "status": "passed",
+          "message": "Component includes focus management",
+          "details": {},
+          "timestamp": "2025-10-01T18:49:00.148Z"
+        }
+      ],
+      "summary": {
+        "total": 44,
+        "passed": 39,
+        "failed": 0,
+        "warnings": 5
+      }
+    },
+    "forms-navigation": {
+      "timestamp": "2025-10-01T18:50:57.258Z",
+      "forms": [
+        {
+          "category": "form",
+          "test": "Contact Form Structure - page.tsx",
+          "status": "failed",
+          "message": "Contact form is missing required elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.292Z"
+        },
+        {
+          "category": "form",
+          "test": "Form Validation - page.tsx",
+          "status": "passed",
+          "message": "Form includes validation logic",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.292Z"
+        },
+        {
+          "category": "form",
+          "test": "Required Fields - page.tsx",
+          "status": "warning",
+          "message": "Missing fields: message",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Form Accessibility - page.tsx",
+          "status": "warning",
+          "message": "Form may lack accessibility features",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Loading States - page.tsx",
+          "status": "warning",
+          "message": "Form may lack loading states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "User Feedback - page.tsx",
+          "status": "warning",
+          "message": "Form may lack user feedback",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Contact Form Structure - Contact.tsx",
+          "status": "passed",
+          "message": "Contact form has proper structure with inputs and submit button",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Form Validation - Contact.tsx",
+          "status": "passed",
+          "message": "Form includes validation logic",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Required Fields - Contact.tsx",
+          "status": "passed",
+          "message": "All required form fields are present",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Form Accessibility - Contact.tsx",
+          "status": "passed",
+          "message": "Form includes accessibility features",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Loading States - Contact.tsx",
+          "status": "warning",
+          "message": "Form may lack loading states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "User Feedback - Contact.tsx",
+          "status": "warning",
+          "message": "Form may lack user feedback",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.293Z"
+        },
+        {
+          "category": "form",
+          "test": "Contact API Route",
+          "status": "warning",
+          "message": "No contact API route found - form may use external service",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.308Z"
+        }
+      ],
+      "navigation": [
+        {
+          "category": "navigation",
+          "test": "Navigation Item - Home",
+          "status": "passed",
+          "message": "Home navigation item is properly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.294Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Navigation Item - Services",
+          "status": "passed",
+          "message": "Services navigation item is properly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.294Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Navigation Item - Portfolio",
+          "status": "passed",
+          "message": "Portfolio navigation item is properly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.294Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Navigation Item - About",
+          "status": "passed",
+          "message": "About navigation item is properly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.294Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Navigation Item - Contact",
+          "status": "passed",
+          "message": "Contact navigation item is properly configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.294Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Mobile Navigation Menu",
+          "status": "passed",
+          "message": "Mobile navigation menu is implemented",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.298Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Navigation State Management",
+          "status": "passed",
+          "message": "Navigation includes state management",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.298Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Active Link States",
+          "status": "passed",
+          "message": "Navigation includes active link highlighting",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.298Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Page Route - app",
+          "status": "passed",
+          "message": "app/page.tsx exists and is accessible",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.299Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Page Route - services",
+          "status": "passed",
+          "message": "app/services/page.tsx exists and is accessible",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.299Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Page Route - portfolio",
+          "status": "passed",
+          "message": "app/portfolio/page.tsx exists and is accessible",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.299Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Page Route - about",
+          "status": "passed",
+          "message": "app/about/page.tsx exists and is accessible",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.299Z"
+        },
+        {
+          "category": "navigation",
+          "test": "Page Route - contact",
+          "status": "passed",
+          "message": "app/contact/page.tsx exists and is accessible",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.299Z"
+        }
+      ],
+      "interactions": [
+        {
+          "category": "interaction",
+          "test": "Interactive Elements - Hero.tsx",
+          "status": "passed",
+          "message": "Component includes interactive elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.303Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Hover States - Hero.tsx",
+          "status": "passed",
+          "message": "Component includes hover states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.303Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Focus States - Hero.tsx",
+          "status": "warning",
+          "message": "Component may lack focus states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.303Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Transitions - Hero.tsx",
+          "status": "passed",
+          "message": "Component includes smooth transitions",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.303Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Interactive Elements - ServicesOverview.tsx",
+          "status": "passed",
+          "message": "Component includes interactive elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.304Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Hover States - ServicesOverview.tsx",
+          "status": "passed",
+          "message": "Component includes hover states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.304Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Focus States - ServicesOverview.tsx",
+          "status": "warning",
+          "message": "Component may lack focus states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.304Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Transitions - ServicesOverview.tsx",
+          "status": "passed",
+          "message": "Component includes smooth transitions",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.304Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Interactive Elements - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Component includes interactive elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Hover States - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Component includes hover states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Focus States - FeaturedProjects.tsx",
+          "status": "warning",
+          "message": "Component may lack focus states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Transitions - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Component includes smooth transitions",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Interactive Elements - PortfolioGallery.tsx",
+          "status": "passed",
+          "message": "Component includes interactive elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Hover States - PortfolioGallery.tsx",
+          "status": "passed",
+          "message": "Component includes hover states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Focus States - PortfolioGallery.tsx",
+          "status": "warning",
+          "message": "Component may lack focus states",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Transitions - PortfolioGallery.tsx",
+          "status": "passed",
+          "message": "Component includes smooth transitions",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.305Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Modal Close functionality",
+          "status": "passed",
+          "message": "Modal includes close functionality",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.306Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Modal Escape key handling",
+          "status": "passed",
+          "message": "Modal includes escape key handling",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.306Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Modal Backdrop click",
+          "status": "warning",
+          "message": "Modal may lack backdrop click",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.306Z"
+        },
+        {
+          "category": "interaction",
+          "test": "Modal Focus management",
+          "status": "warning",
+          "message": "Modal may lack focus management",
+          "details": {},
+          "timestamp": "2025-10-01T18:50:57.306Z"
+        }
+      ],
+      "summary": {
+        "total": 46,
+        "passed": 32,
+        "failed": 1,
+        "warnings": 13
+      }
+    },
+    "accessibility-performance": {
+      "timestamp": "2025-10-01T18:53:26.688Z",
+      "accessibility": [
+        {
+          "category": "accessibility",
+          "test": "ARIA Labels - Header.tsx",
+          "status": "passed",
+          "message": "Component includes aria labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.721Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Roles - Header.tsx",
+          "status": "passed",
+          "message": "Component includes aria roles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.722Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA States - Header.tsx",
+          "status": "passed",
+          "message": "Component includes aria states",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.722Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Semantic HTML - Header.tsx",
+          "status": "passed",
+          "message": "Component uses semantic HTML elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.722Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Navigation - Header.tsx",
+          "status": "warning",
+          "message": "Component may lack keyboard navigation support",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.722Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Focus Management - Header.tsx",
+          "status": "passed",
+          "message": "Component includes focus management styles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.722Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Labels - Footer.tsx",
+          "status": "passed",
+          "message": "Component includes aria labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Roles - Footer.tsx",
+          "status": "passed",
+          "message": "Component includes aria roles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA States - Footer.tsx",
+          "status": "warning",
+          "message": "Component may lack aria states",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Semantic HTML - Footer.tsx",
+          "status": "passed",
+          "message": "Component uses semantic HTML elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Navigation - Footer.tsx",
+          "status": "warning",
+          "message": "Component may lack keyboard navigation support",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Focus Management - Footer.tsx",
+          "status": "warning",
+          "message": "Component may lack focus management styles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Labels - Hero.tsx",
+          "status": "warning",
+          "message": "Component may lack aria labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Roles - Hero.tsx",
+          "status": "warning",
+          "message": "Component may lack aria roles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA States - Hero.tsx",
+          "status": "warning",
+          "message": "Component may lack aria states",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Semantic HTML - Hero.tsx",
+          "status": "passed",
+          "message": "Component uses semantic HTML elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Navigation - Hero.tsx",
+          "status": "warning",
+          "message": "Component may lack keyboard navigation support",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Focus Management - Hero.tsx",
+          "status": "warning",
+          "message": "Component may lack focus management styles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Image Alt Text - Hero.tsx",
+          "status": "passed",
+          "message": "Images include alt text",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.723Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Labels - Contact.tsx",
+          "status": "warning",
+          "message": "Component may lack aria labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Roles - Contact.tsx",
+          "status": "warning",
+          "message": "Component may lack aria roles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA States - Contact.tsx",
+          "status": "warning",
+          "message": "Component may lack aria states",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Semantic HTML - Contact.tsx",
+          "status": "passed",
+          "message": "Component uses semantic HTML elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Navigation - Contact.tsx",
+          "status": "warning",
+          "message": "Component may lack keyboard navigation support",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Focus Management - Contact.tsx",
+          "status": "passed",
+          "message": "Component includes focus management styles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Form Labels - Contact.tsx",
+          "status": "passed",
+          "message": "Form inputs have proper labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Labels - PortfolioGallery.tsx",
+          "status": "warning",
+          "message": "Component may lack aria labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Roles - PortfolioGallery.tsx",
+          "status": "warning",
+          "message": "Component may lack aria roles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA States - PortfolioGallery.tsx",
+          "status": "warning",
+          "message": "Component may lack aria states",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Semantic HTML - PortfolioGallery.tsx",
+          "status": "passed",
+          "message": "Component uses semantic HTML elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Navigation - PortfolioGallery.tsx",
+          "status": "warning",
+          "message": "Component may lack keyboard navigation support",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Focus Management - PortfolioGallery.tsx",
+          "status": "warning",
+          "message": "Component may lack focus management styles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.724Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Labels - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may lack aria labels",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA Roles - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may lack aria roles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "ARIA States - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may lack aria states",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Semantic HTML - ImageModal.tsx",
+          "status": "passed",
+          "message": "Component uses semantic HTML elements",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Navigation - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may lack keyboard navigation support",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Focus Management - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may lack focus management styles",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Image Alt Text - ImageModal.tsx",
+          "status": "passed",
+          "message": "Images include alt text",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Custom Color System",
+          "status": "passed",
+          "message": "Custom color system is defined",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.725Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Dark Mode Support",
+          "status": "passed",
+          "message": "Dark mode styles are implemented",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.726Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Color Contrast - Hero.tsx",
+          "status": "passed",
+          "message": "No obvious low-contrast color combinations found",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.726Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Color Contrast - Header.tsx",
+          "status": "passed",
+          "message": "No obvious low-contrast color combinations found",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.726Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Tab Index - Header.tsx",
+          "status": "warning",
+          "message": "Component may need tab index management",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Events - Header.tsx",
+          "status": "warning",
+          "message": "Component may need keyboard event handling",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Tab Index - Contact.tsx",
+          "status": "warning",
+          "message": "Component may need tab index management",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Events - Contact.tsx",
+          "status": "warning",
+          "message": "Component may need keyboard event handling",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Tab Index - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may need tab index management",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Keyboard Events - ImageModal.tsx",
+          "status": "warning",
+          "message": "Component may need keyboard event handling",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        },
+        {
+          "category": "accessibility",
+          "test": "Escape Key Handling - ImageModal.tsx",
+          "status": "passed",
+          "message": "Modal handles escape key",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.727Z"
+        }
+      ],
+      "performance": [
+        {
+          "category": "performance",
+          "test": "Image Optimization - Hero.tsx",
+          "status": "warning",
+          "message": "Uses regular img tags instead of optimized Image component",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.728Z"
+        },
+        {
+          "category": "performance",
+          "test": "Image Optimization - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Uses Next.js Image component for optimization",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.729Z"
+        },
+        {
+          "category": "performance",
+          "test": "Lazy Loading - page.tsx",
+          "status": "passed",
+          "message": "Implements lazy loading for components",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.729Z"
+        },
+        {
+          "category": "performance",
+          "test": "Image Loading Strategy - FeaturedProjects.tsx",
+          "status": "passed",
+          "message": "Implements image loading strategies",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.729Z"
+        },
+        {
+          "category": "performance",
+          "test": "Code Splitting",
+          "status": "passed",
+          "message": "Implements dynamic imports for code splitting",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.729Z"
+        },
+        {
+          "category": "performance",
+          "test": "Loading States - loading.tsx",
+          "status": "passed",
+          "message": "Loading state component exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.729Z"
+        },
+        {
+          "category": "performance",
+          "test": "Loading States - LoadingSkeleton.tsx",
+          "status": "passed",
+          "message": "Loading state component exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.729Z"
+        },
+        {
+          "category": "performance",
+          "test": "Error Boundaries",
+          "status": "passed",
+          "message": "Error boundary component exists for better UX",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.730Z"
+        },
+        {
+          "category": "performance",
+          "test": "Font Optimization",
+          "status": "passed",
+          "message": "Uses Next.js font optimization",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.730Z"
+        },
+        {
+          "category": "performance",
+          "test": "Font Loading Strategy",
+          "status": "passed",
+          "message": "Implements font loading optimizations",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.730Z"
+        },
+        {
+          "category": "performance",
+          "test": "Compression",
+          "status": "passed",
+          "message": "Compression is configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.730Z"
+        },
+        {
+          "category": "performance",
+          "test": "Image Configuration",
+          "status": "passed",
+          "message": "Image optimization is configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.730Z"
+        }
+      ],
+      "seo": [
+        {
+          "category": "seo",
+          "test": "Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.731Z"
+        },
+        {
+          "category": "seo",
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.731Z"
+        },
+        {
+          "category": "seo",
+          "test": "Open Graph - page.tsx",
+          "status": "passed",
+          "message": "Page includes Open Graph metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.731Z"
+        },
+        {
+          "category": "seo",
+          "test": "Twitter Cards - page.tsx",
+          "status": "passed",
+          "message": "Page includes Twitter Card metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.731Z"
+        },
+        {
+          "category": "seo",
+          "test": "Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Open Graph - page.tsx",
+          "status": "passed",
+          "message": "Page includes Open Graph metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Twitter Cards - page.tsx",
+          "status": "passed",
+          "message": "Page includes Twitter Card metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Open Graph - page.tsx",
+          "status": "passed",
+          "message": "Page includes Open Graph metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Twitter Cards - page.tsx",
+          "status": "passed",
+          "message": "Page includes Twitter Card metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Open Graph - page.tsx",
+          "status": "passed",
+          "message": "Page includes Open Graph metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Twitter Cards - page.tsx",
+          "status": "passed",
+          "message": "Page includes Twitter Card metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Metadata - page.tsx",
+          "status": "passed",
+          "message": "Page includes metadata configuration",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Structured Data - page.tsx",
+          "status": "passed",
+          "message": "Page includes structured data",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Open Graph - page.tsx",
+          "status": "passed",
+          "message": "Page includes Open Graph metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Twitter Cards - page.tsx",
+          "status": "passed",
+          "message": "Page includes Twitter Card metadata",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Sitemap",
+          "status": "passed",
+          "message": "Sitemap configuration exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Robots.txt",
+          "status": "passed",
+          "message": "Robots.txt configuration exists",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.732Z"
+        },
+        {
+          "category": "seo",
+          "test": "Canonical URLs",
+          "status": "passed",
+          "message": "Canonical URLs are configured",
+          "details": {},
+          "timestamp": "2025-10-01T18:53:26.733Z"
+        }
+      ],
+      "summary": {
+        "total": 85,
+        "passed": 55,
+        "failed": 0,
+        "warnings": 30
+      }
+    }
+  }
+}

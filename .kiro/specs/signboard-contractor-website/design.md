@@ -38,6 +38,7 @@ The signboard and contractor business website will be built using Next.js 15 wit
 - **Header/Navigation**: Responsive navigation with mobile hamburger menu
 - **Footer**: Contact info, business hours, social links
 - **Layout**: Consistent page wrapper with metadata
+- **Sticky Sidebar**: Right-side fixed sidebar for quick access to contact and navigation
 
 #### 2. Homepage Components
 - **Hero Section**: Business name, tagline, primary CTA
@@ -62,6 +63,46 @@ The signboard and contractor business website will be built using Next.js 15 wit
 - **Card**: Reusable content containers
 - **Section**: Page section wrapper with consistent spacing
 - **Loading States**: Skeleton loaders for better UX
+
+#### 6. Sticky Sidebar Component
+- **Sticky Sidebar**: Fixed-position right sidebar with quick access features
+- **Quick Contact**: Phone number and email with click-to-call/email functionality
+- **Navigation Shortcuts**: Jump links to main page sections
+- **CTA Button**: Prominent "Get Quote" or "Contact Us" button
+- **Responsive Behavior**: Adapts or hides on mobile devices for optimal UX
+
+### Sticky Sidebar Design Specifications
+
+#### Visual Design
+- **Position**: Fixed position on the right side of the viewport
+- **Width**: 280px on desktop, hidden on mobile (< 1024px)
+- **Background**: Semi-transparent white with subtle shadow/border
+- **Spacing**: 20px from right edge, starts below header
+- **Z-index**: High enough to stay above content but below modals
+
+#### Content Structure
+1. **Quick Contact Section**
+   - Business phone with click-to-call functionality
+   - Email with click-to-email functionality
+   - Business hours display
+
+2. **Navigation Shortcuts**
+   - Jump links to main page sections (Services, Portfolio, About, Contact)
+   - Smooth scroll behavior
+
+3. **Primary CTA**
+   - Prominent "Get Free Quote" button
+   - Links to contact form or opens contact modal
+
+#### Responsive Behavior
+- **Desktop (≥1024px)**: Fully visible sticky sidebar
+- **Tablet (768px-1023px)**: Hidden to preserve content space
+- **Mobile (<768px)**: Hidden, functionality available in header/footer
+
+#### Interaction Design
+- **Hover Effects**: Subtle hover states for all interactive elements
+- **Scroll Behavior**: Remains fixed during page scroll
+- **Accessibility**: Proper focus management and keyboard navigation
 
 ### Component Interface Design
 
@@ -93,6 +134,20 @@ interface BusinessInfo {
   hours: string;
   yearsExperience: number;
 }
+
+interface StickySidebarProps {
+  businessInfo: BusinessInfo;
+  navigationLinks: Array<{
+    label: string;
+    href: string;
+    section: string;
+  }>;
+  ctaButton: {
+    text: string;
+    href: string;
+    onClick?: () => void;
+  };
+}
 ```
 
 ## Data Models
@@ -121,8 +176,9 @@ Since this is a business website, most content will be static or semi-static:
 ```
 /app
   /components
-    /ui           - Reusable UI components
+    /ui           - Reusable UI components (Button, Card, etc.)
     /sections     - Page-specific sections
+    /layout       - Layout components (Header, Footer, StickySidebar)
   /lib
     /data         - Static data files
     /utils        - Utility functions

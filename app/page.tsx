@@ -1,6 +1,5 @@
 // Import our components and data
 import { Metadata } from 'next';
-import { Suspense } from 'react';
 import { Header, Footer } from './components';
 import { Hero, ServicesOverview, About, Contact } from './components/sections';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';

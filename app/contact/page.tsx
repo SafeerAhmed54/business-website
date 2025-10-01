@@ -137,7 +137,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Business Hours</h3>
-                  <p className="text-gray-600 mb-4">We're here when you need us</p>
+                  <p className="text-gray-600 mb-4">We&apos;re here when you need us</p>
                   <p className="text-orange-600 font-semibold text-sm">
                     {businessInfo.hours}
                   </p>
