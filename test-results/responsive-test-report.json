@@ -1,0 +1,474 @@
+{
+  "timestamp": "2025-10-01T18:49:00.098Z",
+  "devices": [
+    {
+      "category": "device",
+      "test": "iPhone SE Compatibility",
+      "status": "passed",
+      "message": "Device (375x667) maps to base breakpoint",
+      "details": {
+        "width": 375,
+        "height": 667,
+        "breakpoint": "base",
+        "userAgent": "iPhone"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "iPhone 12 Compatibility",
+      "status": "passed",
+      "message": "Device (390x844) maps to base breakpoint",
+      "details": {
+        "width": 390,
+        "height": 844,
+        "breakpoint": "base",
+        "userAgent": "iPhone"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "iPhone 14 Pro Max Compatibility",
+      "status": "passed",
+      "message": "Device (430x932) maps to base breakpoint",
+      "details": {
+        "width": 430,
+        "height": 932,
+        "breakpoint": "base",
+        "userAgent": "iPhone"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Samsung Galaxy S21 Compatibility",
+      "status": "passed",
+      "message": "Device (384x854) maps to base breakpoint",
+      "details": {
+        "width": 384,
+        "height": 854,
+        "breakpoint": "base",
+        "userAgent": "Android"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Google Pixel 6 Compatibility",
+      "status": "passed",
+      "message": "Device (393x851) maps to base breakpoint",
+      "details": {
+        "width": 393,
+        "height": 851,
+        "breakpoint": "base",
+        "userAgent": "Android"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "iPad Compatibility",
+      "status": "passed",
+      "message": "Device (768x1024) maps to md breakpoint",
+      "details": {
+        "width": 768,
+        "height": 1024,
+        "breakpoint": "md",
+        "userAgent": "iPad"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "iPad Pro 11\" Compatibility",
+      "status": "passed",
+      "message": "Device (834x1194) maps to md breakpoint",
+      "details": {
+        "width": 834,
+        "height": 1194,
+        "breakpoint": "md",
+        "userAgent": "iPad"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "iPad Pro 12.9\" Compatibility",
+      "status": "passed",
+      "message": "Device (1024x1366) maps to lg breakpoint",
+      "details": {
+        "width": 1024,
+        "height": 1366,
+        "breakpoint": "lg",
+        "userAgent": "iPad"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Samsung Galaxy Tab Compatibility",
+      "status": "passed",
+      "message": "Device (800x1280) maps to md breakpoint",
+      "details": {
+        "width": 800,
+        "height": 1280,
+        "breakpoint": "md",
+        "userAgent": "Android"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Small Desktop Compatibility",
+      "status": "passed",
+      "message": "Device (1366x768) maps to xl breakpoint",
+      "details": {
+        "width": 1366,
+        "height": 768,
+        "breakpoint": "xl",
+        "userAgent": "Desktop"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Standard Desktop Compatibility",
+      "status": "passed",
+      "message": "Device (1920x1080) maps to 2xl breakpoint",
+      "details": {
+        "width": 1920,
+        "height": 1080,
+        "breakpoint": "2xl",
+        "userAgent": "Desktop"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Large Desktop Compatibility",
+      "status": "passed",
+      "message": "Device (2560x1440) maps to 2xl breakpoint",
+      "details": {
+        "width": 2560,
+        "height": 1440,
+        "breakpoint": "2xl",
+        "userAgent": "Desktop"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    },
+    {
+      "category": "device",
+      "test": "Ultra Wide Compatibility",
+      "status": "passed",
+      "message": "Device (3440x1440) maps to 2xl breakpoint",
+      "details": {
+        "width": 3440,
+        "height": 1440,
+        "breakpoint": "2xl",
+        "userAgent": "Desktop"
+      },
+      "timestamp": "2025-10-01T18:49:00.145Z"
+    }
+  ],
+  "breakpoints": [
+    {
+      "category": "breakpoint",
+      "test": "Tailwind sm breakpoint",
+      "status": "warning",
+      "message": "sm breakpoint may not be explicitly configured",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.137Z"
+    },
+    {
+      "category": "breakpoint",
+      "test": "Tailwind md breakpoint",
+      "status": "warning",
+      "message": "md breakpoint may not be explicitly configured",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.137Z"
+    },
+    {
+      "category": "breakpoint",
+      "test": "Tailwind lg breakpoint",
+      "status": "warning",
+      "message": "lg breakpoint may not be explicitly configured",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.137Z"
+    },
+    {
+      "category": "breakpoint",
+      "test": "Tailwind xl breakpoint",
+      "status": "warning",
+      "message": "xl breakpoint may not be explicitly configured",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.137Z"
+    },
+    {
+      "category": "breakpoint",
+      "test": "Tailwind 2xl breakpoint",
+      "status": "warning",
+      "message": "2xl breakpoint may not be explicitly configured",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.137Z"
+    }
+  ],
+  "components": [
+    {
+      "category": "component",
+      "test": "Responsive Design - Header.tsx",
+      "status": "passed",
+      "message": "Component has 6 responsive classes",
+      "details": {
+        "Mobile First": 1,
+        "Tablet": 4,
+        "Desktop": 1,
+        "Large Desktop": 0,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.138Z"
+    },
+    {
+      "category": "component",
+      "test": "Mobile Optimization - Header.tsx",
+      "status": "passed",
+      "message": "Component includes mobile-specific optimizations",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.138Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - Header.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.139Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Design - Footer.tsx",
+      "status": "passed",
+      "message": "Component has 44 responsive classes",
+      "details": {
+        "Mobile First": 39,
+        "Tablet": 2,
+        "Desktop": 3,
+        "Large Desktop": 0,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.139Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - Footer.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.139Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Design - Hero.tsx",
+      "status": "passed",
+      "message": "Component has 20 responsive classes",
+      "details": {
+        "Mobile First": 7,
+        "Tablet": 3,
+        "Desktop": 10,
+        "Large Desktop": 0,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.140Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - Hero.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.140Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Design - ServicesOverview.tsx",
+      "status": "passed",
+      "message": "Component has 32 responsive classes",
+      "details": {
+        "Mobile First": 23,
+        "Tablet": 1,
+        "Desktop": 7,
+        "Large Desktop": 1,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.140Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - ServicesOverview.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.141Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Design - FeaturedProjects.tsx",
+      "status": "passed",
+      "message": "Component has 69 responsive classes",
+      "details": {
+        "Mobile First": 42,
+        "Tablet": 2,
+        "Desktop": 22,
+        "Large Desktop": 3,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.142Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - FeaturedProjects.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.143Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Design - Contact.tsx",
+      "status": "passed",
+      "message": "Component has 64 responsive classes",
+      "details": {
+        "Mobile First": 57,
+        "Tablet": 1,
+        "Desktop": 5,
+        "Large Desktop": 1,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.143Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - Contact.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.143Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Design - PortfolioGallery.tsx",
+      "status": "passed",
+      "message": "Component has 18 responsive classes",
+      "details": {
+        "Mobile First": 16,
+        "Tablet": 0,
+        "Desktop": 2,
+        "Large Desktop": 0,
+        "Extra Large": 0
+      },
+      "timestamp": "2025-10-01T18:49:00.144Z"
+    },
+    {
+      "category": "component",
+      "test": "Touch Optimization - PortfolioGallery.tsx",
+      "status": "passed",
+      "message": "Component includes touch-friendly sizing",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.144Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Grid - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive grid layouts",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.146Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Spacing - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive spacing patterns",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.146Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Grid - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive grid layouts",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.147Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Spacing - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive spacing patterns",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.147Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Typography - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive typography scaling",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.147Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Spacing - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive spacing patterns",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.147Z"
+    },
+    {
+      "category": "component",
+      "test": "Responsive Typography - page.tsx",
+      "status": "passed",
+      "message": "Page uses responsive typography scaling",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.147Z"
+    },
+    {
+      "category": "component",
+      "test": "Accessibility - Header.tsx",
+      "status": "passed",
+      "message": "Component includes ARIA labels",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.148Z"
+    },
+    {
+      "category": "component",
+      "test": "Keyboard Navigation - Header.tsx",
+      "status": "passed",
+      "message": "Component supports keyboard navigation",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.148Z"
+    },
+    {
+      "category": "component",
+      "test": "Focus Management - Header.tsx",
+      "status": "passed",
+      "message": "Component includes focus management",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.148Z"
+    },
+    {
+      "category": "component",
+      "test": "Focus Management - Contact.tsx",
+      "status": "passed",
+      "message": "Component includes focus management",
+      "details": {},
+      "timestamp": "2025-10-01T18:49:00.148Z"
+    }
+  ],
+  "summary": {
+    "total": 44,
+    "passed": 39,
+    "failed": 0,
+    "warnings": 5
+  }
+}
