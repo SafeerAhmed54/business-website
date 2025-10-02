@@ -141,7 +141,6 @@
 
   - [x] 8.5 Integrate sidebar into main layout
 
-
     - Add StickySidebar component to root layout
     - Ensure sidebar works across all pages
     - Test sidebar positioning and responsiveness
