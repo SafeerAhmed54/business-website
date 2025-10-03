@@ -135,13 +135,6 @@ export default function Home() {
             <Contact businessInfo={businessInfo} />
           </ErrorBoundary>
         </section>
-
-        {/* Contact Section - Get In Touch */}
-        <section id="contact" className="scroll-mt-20">
-          <ErrorBoundary>
-            <Contact businessInfo={businessInfo} />
-          </ErrorBoundary>
-        </section>
         
         {/* Footer - Additional Information */}
         <ErrorBoundary>
