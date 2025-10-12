@@ -4,7 +4,7 @@ export { default as Footer } from './Footer';
 export { default as AnimatedHero } from './AnimatedHero';
 
 // Layout components
-export { default as StickySidebar } from './layout/StickySidebar';
+// StickySidebar removed - replaced with NavigationSlider
 
 // Re-export UI components
 export * from './ui';

@@ -3,42 +3,42 @@ import { NavigationItem } from '@/app/types';
 export const mainNavigation: NavigationItem[] = [
   {
     label: 'Home',
-    href: '/'
+    href: '#hero'
   },
   {
     label: 'About',
-    href: '/about'
+    href: '#about'
   },
   {
     label: 'Services',
-    href: '/services'
+    href: '#services'
   },
   {
     label: 'Portfolio',
-    href: '/portfolio'
+    href: '#portfolio'
   },
   {
     label: 'Contact',
-    href: '/contact'
+    href: '#contact'
   }
 ];
 
 export const footerNavigation: NavigationItem[] = [
   {
     label: 'About',
-    href: '/about'
+    href: '#about'
   },
   {
     label: 'Services',
-    href: '/services'
+    href: '#services'
   },
   {
     label: 'Portfolio',
-    href: '/portfolio'
+    href: '#portfolio'
   },
   {
     label: 'Contact',
-    href: '/contact'
+    href: '#contact'
   }
 ];
 

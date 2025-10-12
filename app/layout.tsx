@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { businessInfo } from "@/app/lib/data";
 import StructuredData from "@/app/components/StructuredData";
+import NavigationSlider from "@/app/components/ui/NavigationSlider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -121,6 +122,17 @@ export default function RootLayout({
         className={`${inter.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        
+        {/* Global Navigation Slider */}
+        <NavigationSlider
+          sections={[
+            { id: 'hero', label: 'Home' },
+            { id: 'about', label: 'About' },
+            { id: 'services', label: 'Services' },
+            { id: 'portfolio', label: 'Portfolio' },
+            { id: 'contact', label: 'Contact' }
+          ]}
+        />
         
         {/* No-script fallback */}
         <noscript>

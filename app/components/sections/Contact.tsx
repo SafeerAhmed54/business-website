@@ -174,12 +174,12 @@ export default function Contact({ businessInfo }: ContactProps) {
                   className="w-full px-3 sm:px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/50 min-h-[48px] text-base"
                 >
                   <option value="">Select a service</option>
-                  <option value="custom-signboards">Custom Signboard Design</option>
-                  <option value="signboard-installation">Signboard Installation</option>
-                  <option value="led-illuminated-signs">LED & Illuminated Signage</option>
-                  <option value="commercial-contracting">Commercial Contracting</option>
-                  <option value="residential-construction">Residential Construction</option>
-                  <option value="storefront-design">Storefront Design & Build</option>
+                  <option value="custom-signboards" className="text-blue-900 font-bold">Custom Signboard Design</option>
+                  <option value="signboard-installation" className="text-blue-900 font-bold">Signboard Installation</option>
+                  <option value="led-illuminated-signs" className="text-blue-900 font-bold">LED & Illuminated Signage</option>
+                  <option value="commercial-contracting" className="text-blue-900 font-bold">Commercial Contracting</option>
+                  <option value="residential-construction" className="text-blue-900 font-bold">Residential Construction</option>
+                  <option value="storefront-design" className="text-blue-900 font-bold">Storefront Design & Build</option>
                 </select>
               </div>
 
