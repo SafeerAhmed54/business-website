@@ -18,6 +18,13 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
+  const nextSlide = useCallback(() => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => (prev + 1) % featuredProjects.length);
+    setTimeout(() => setIsAnimating(false), 800);
+  }, [isAnimating, featuredProjects.length]);
+
   // Auto-slide functionality
   useEffect(() => {
     if (!isAutoPlaying || isAnimating) return;
@@ -28,13 +35,6 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, isAnimating, nextSlide]);
-
-  const nextSlide = useCallback(() => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % featuredProjects.length);
-    setTimeout(() => setIsAnimating(false), 800);
-  }, [isAnimating, featuredProjects.length]);
 
   const prevSlide = () => {
     if (isAnimating) return;

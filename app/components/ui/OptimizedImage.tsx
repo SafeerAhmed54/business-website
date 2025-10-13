@@ -155,7 +155,7 @@ export default function OptimizedImage({
 
       {/* Actual image */}
       {shouldLoad && !hasError && (
-        <Image {...imageProps} />
+        <Image {...imageProps} alt={alt} />
       )}
     </div>
   );

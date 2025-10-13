@@ -51,13 +51,13 @@ export class ErrorLogger {
     this.errors = [];
   }
 
-  private async sendToErrorService(errorInfo: ErrorInfo) {
+  private async sendToErrorService(_errorInfo: ErrorInfo) {
     // Example implementation for sending to an error tracking service
     try {
       // await fetch('/api/errors', {
       //   method: 'POST',
       //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(errorInfo),
+      //   body: JSON.stringify(_errorInfo),
       // });
     } catch (e) {
       console.error('Failed to send error to tracking service:', e);

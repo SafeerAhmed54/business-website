@@ -110,11 +110,7 @@ export default function RootLayout({
       <head>
         <StructuredData type="organization" />
         <StructuredData type="website" />
-        {/* Resource hints for better performance */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* Resource hints for better performance - Next.js handles Google Fonts automatically */}
         {/* Preload critical CSS */}
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
