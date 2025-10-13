@@ -138,7 +138,7 @@ export default function About({ businessInfo }: AboutProps) {
           <div className="relative order-first lg:order-last">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/images/about-team.jpg"
+                src="/ProfilePicture.png"
                 alt="Our professional team"
                 className="w-full h-full object-cover"
                 onError={(e) => {
