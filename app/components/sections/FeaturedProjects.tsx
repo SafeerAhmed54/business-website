@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect, useCallback } from 'react';
+
 import Image from 'next/image';
 import { Project } from '@/app/types';
 import { Button } from '../ui/Button';
@@ -27,14 +27,14 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, isAnimating, currentIndex]);
+  }, [isAutoPlaying, isAnimating, nextSlide]);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % featuredProjects.length);
     setTimeout(() => setIsAnimating(false), 800);
-  };
+  }, [isAnimating, featuredProjects.length]);
 
   const prevSlide = () => {
     if (isAnimating) return;
@@ -346,10 +346,11 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   >
                     {/* Project Image */}
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <Image
                         src={project.images[0]}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
                           e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='18' fill='%23666'%3E" + project.title + "%3C/text%3E%3C/svg%3E";
                         }}

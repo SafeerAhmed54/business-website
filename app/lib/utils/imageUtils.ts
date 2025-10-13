@@ -13,7 +13,7 @@ export function getOptimizedImageUrl(
   height?: number, 
   config: ImageConfig = {}
 ): string {
-  const { quality = 85, format = 'webp' } = config;
+  const { quality: _quality = 85, format: _format = 'webp' } = config;
   
   // For external images or when using Next.js Image component,
   // the optimization is handled automatically

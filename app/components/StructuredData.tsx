@@ -1,4 +1,4 @@
-import { businessInfo, contactMethods } from '@/app/lib/data/business';
+import { businessInfo } from '@/app/lib/data/business';
 
 interface StructuredDataProps {
   type?: 'organization' | 'localBusiness' | 'website';

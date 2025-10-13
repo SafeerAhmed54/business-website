@@ -46,7 +46,7 @@ export default function Error({ error, reset }: ErrorProps) {
         <div className="text-white mb-8">
           <h1 className="text-3xl font-bold mb-4">Something went wrong!</h1>
           <p className="text-lg text-white/80 mb-6">
-            We're sorry, but something unexpected happened. Our team has been notified and is working to fix the issue.
+            We&apos;re sorry, but something unexpected happened. Our team has been notified and is working to fix the issue.
           </p>
           
           {/* Show error details in development */}

@@ -64,7 +64,7 @@ class ErrorBoundary extends Component<Props, State> {
             </h3>
             
             <p className="text-gray-600 mb-6">
-              We're sorry, but this section couldn't load properly. Please try refreshing the page.
+              We&apos;re sorry, but this section couldn&apos;t load properly. Please try refreshing the page.
             </p>
             
             <div className="space-y-3">

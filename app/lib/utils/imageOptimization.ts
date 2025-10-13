@@ -34,7 +34,7 @@ export function getOptimizedQuality(): number {
   if (typeof window === 'undefined') return 85;
   
   // Check for slow connection
-  const connection = (navigator as any).connection;
+  const connection = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection;
   if (connection) {
     if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
       return 60;

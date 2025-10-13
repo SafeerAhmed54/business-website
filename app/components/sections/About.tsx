@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { BusinessInfo } from "@/app/types";
 import { Section } from "../ui/Section";
 
@@ -137,10 +138,11 @@ export default function About({ businessInfo }: AboutProps) {
           {/* Right side - Image */}
           <div className="relative order-first lg:order-last">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="/ProfilePicture.png"
                 alt="Our professional team"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
                 onError={(e) => {
                   e.currentTarget.src =
                     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='500' viewBox='0 0 600 500'%3E%3Crect width='600' height='500' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%23666'%3EOur Professional Team%3C/text%3E%3C/svg%3E";

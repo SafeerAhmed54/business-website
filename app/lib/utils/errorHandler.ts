@@ -22,7 +22,7 @@ export class ErrorLogger {
     return ErrorLogger.instance;
   }
 
-  logError(error: Error, additionalInfo?: Record<string, any>) {
+  logError(error: Error, additionalInfo?: Record<string, unknown>) {
     const errorInfo: ErrorInfo = {
       message: error.message,
       stack: error.stack,
@@ -98,7 +98,7 @@ export const setupGlobalErrorHandlers = () => {
       const target = event.target as HTMLElement;
       errorLogger.logError(new Error(`Resource failed to load: ${target.tagName}`), {
         type: 'resource',
-        src: (target as any).src || (target as any).href,
+        src: (target as HTMLImageElement | HTMLLinkElement).src || (target as HTMLLinkElement).href,
         tagName: target.tagName,
       });
     }
