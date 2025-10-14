@@ -13,10 +13,14 @@ export function getOptimizedImageUrl(
   height?: number, 
   config: ImageConfig = {}
 ): string {
-  // config is available for future use but currently not needed
+  // For future use, we could apply config transformations here
+  // Currently Next.js Image component handles optimization automatically
   
-  // For external images or when using Next.js Image component,
-  // the optimization is handled automatically
+  // Example of how config could be used in the future:
+  if (config.format || config.quality || config.blur) {
+    // Future implementation would apply these transformations
+  }
+  
   return src;
 }
 

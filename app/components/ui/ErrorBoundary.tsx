@@ -66,22 +66,6 @@ class ErrorBoundary extends Component<Props, State> {
             <p className="text-gray-600 mb-6">
               We&apos;re sorry, but this section couldn&apos;t load properly. Please try refreshing the page.
             </p>
-            
-            <div className="space-y-3">
-              <button
-                onClick={() => this.setState({ hasError: false, error: undefined })}
-                className="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-              >
-                Try Again
-              </button>
-              
-              <button
-                onClick={() => window.location.reload()}
-                className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-              >
-                Refresh Page
-              </button>
-            </div>
 
             {/* Show error details in development */}
             {process.env.NODE_ENV === 'development' && this.state.error && (
@@ -111,6 +95,7 @@ class ErrorBoundary extends Component<Props, State> {
 }
 
 export default ErrorBoundary;
+
 
 // Hook version for functional components
 export function useErrorHandler() {

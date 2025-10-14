@@ -51,14 +51,18 @@ export class ErrorLogger {
     this.errors = [];
   }
 
-  private async sendToErrorService(_errorInfo: ErrorInfo) {
+  private async sendToErrorService(errorInfo: ErrorInfo) {
     // Example implementation for sending to an error tracking service
     try {
+      // In production, uncomment and configure your error tracking service
       // await fetch('/api/errors', {
       //   method: 'POST',
       //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(_errorInfo),
+      //   body: JSON.stringify(errorInfo),
       // });
+      
+      // For now, just log that we would send the error
+      console.log('Would send error to tracking service:', errorInfo.message);
     } catch (e) {
       console.error('Failed to send error to tracking service:', e);
     }
@@ -96,9 +100,22 @@ export const setupGlobalErrorHandlers = () => {
   window.addEventListener('error', (event) => {
     if (event.target && event.target !== window) {
       const target = event.target as HTMLElement;
+      let resourceUrl = '';
+      
+      // Safely get the resource URL based on element type
+      if (target instanceof HTMLImageElement) {
+        resourceUrl = target.src;
+      } else if (target instanceof HTMLLinkElement) {
+        resourceUrl = target.href;
+      } else if (target instanceof HTMLScriptElement) {
+        resourceUrl = target.src;
+      } else if (target instanceof HTMLSourceElement) {
+        resourceUrl = target.src;
+      }
+      
       errorLogger.logError(new Error(`Resource failed to load: ${target.tagName}`), {
         type: 'resource',
-        src: (target as HTMLImageElement | HTMLLinkElement).src || (target as HTMLLinkElement).href,
+        src: resourceUrl,
         tagName: target.tagName,
       });
     }
@@ -184,15 +201,21 @@ export const getFormErrorMessage = (field: string, error: string): string => {
 
 // Image loading error handling
 export const getImageFallback = (width?: number, height?: number): string => {
-  return `data:image/svg+xml;base64,${Buffer.from(
-    `<svg width="${width || 400}" height="${height || 300}" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="#f3f4f6"/>
-      <circle cx="50%" cy="40%" r="20" fill="#d1d5db"/>
-      <rect x="30%" y="60%" width="40%" height="8" rx="4" fill="#d1d5db"/>
-      <rect x="35%" y="72%" width="30%" height="6" rx="3" fill="#e5e7eb"/>
-      <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
-        Image not available
-      </text>
-    </svg>`
-  ).toString('base64')}`;
+  const svgContent = `<svg width="${width || 400}" height="${height || 300}" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="#f3f4f6"/>
+    <circle cx="50%" cy="40%" r="20" fill="#d1d5db"/>
+    <rect x="30%" y="60%" width="40%" height="8" rx="4" fill="#d1d5db"/>
+    <rect x="35%" y="72%" width="30%" height="6" rx="3" fill="#e5e7eb"/>
+    <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+      Image not available
+    </text>
+  </svg>`;
+  
+  // Use btoa for browser compatibility instead of Buffer
+  if (typeof window !== 'undefined') {
+    return `data:image/svg+xml;base64,${btoa(svgContent)}`;
+  }
+  
+  // Fallback for server-side rendering
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgContent)}`;
 };

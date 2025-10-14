@@ -84,7 +84,7 @@ export const addResourceHints = () => {
 };
 
 // Performance monitoring utilities
-export const measurePerformance = (name: string, fn: () => void) => {
+export const measurePerformance = (name: string, fn: () => unknown) => {
   if (typeof window === 'undefined') return fn();
   
   const start = performance.now();
@@ -113,7 +113,11 @@ export const trackWebVitals = () => {
     const fidObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       entries.forEach((entry) => {
-        console.log('FID:', entry.processingStart - entry.startTime);
+        // Type assertion for PerformanceEventTiming which has processingStart
+        const eventEntry = entry as PerformanceEntry & { processingStart?: number };
+        if (eventEntry.processingStart) {
+          console.log('FID:', eventEntry.processingStart - entry.startTime);
+        }
       });
     });
     fidObserver.observe({ type: 'first-input', buffered: true });
@@ -122,8 +126,8 @@ export const trackWebVitals = () => {
     let clsValue = 0;
     const clsObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
-      entries.forEach((entry: any) => {
-        if (!entry.hadRecentInput) {
+      entries.forEach((entry: PerformanceEntry & { value?: number; hadRecentInput?: boolean }) => {
+        if (!entry.hadRecentInput && entry.value) {
           clsValue += entry.value;
         }
       });
@@ -132,6 +136,6 @@ export const trackWebVitals = () => {
     clsObserver.observe({ type: 'layout-shift', buffered: true });
   } catch (error) {
     // Silently fail if Performance Observer is not supported
-    console.warn('Performance monitoring not supported in this browser');
+    console.warn('Performance monitoring not supported in this browser', error);
   }
 };

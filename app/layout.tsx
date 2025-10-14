@@ -3,7 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { businessInfo } from "@/app/lib/data";
 import StructuredData from "@/app/components/StructuredData";
-import NavigationSlider from "@/app/components/ui/NavigationSlider";
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -119,16 +119,7 @@ export default function RootLayout({
       >
         {children}
         
-        {/* Global Navigation Slider */}
-        <NavigationSlider
-          sections={[
-            { id: 'hero', label: 'Home' },
-            { id: 'about', label: 'About' },
-            { id: 'services', label: 'Services' },
-            { id: 'portfolio', label: 'Portfolio' },
-            { id: 'contact', label: 'Contact' }
-          ]}
-        />
+
         
         {/* No-script fallback */}
         <noscript>
@@ -143,12 +134,9 @@ export default function RootLayout({
               <p className="text-gray-600 mb-4">
                 This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.
               </p>
-              <button 
-                onClick={() => window.location.reload()}
-                className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
-              >
-                Reload Page
-              </button>
+              <p className="text-sm text-gray-500">
+                Please enable JavaScript and reload the page.
+              </p>
             </div>
           </div>
         </noscript>

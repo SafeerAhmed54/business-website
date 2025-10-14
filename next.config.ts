@@ -3,7 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Enable experimental features for better performance
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@heroicons/react'],
   },
   
@@ -32,8 +31,7 @@ const nextConfig: NextConfig = {
     },
   }),
   
-  // Performance optimizations
-  swcMinify: true,
+
   
   // Headers for better caching
   async headers() {
