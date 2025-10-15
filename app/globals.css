@@ -440,8 +440,28 @@ img {
 /* Optimize images for mobile */
 @media (max-width: 768px) {
   img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Ensure Next.js Image components work properly on mobile */
+  [data-nextjs-image] {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px !important;
+  }
+  
+  /* Fix for fill images on mobile */
+  [data-nextjs-image][style*="position: absolute"] {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: unset !important;
   }
 }
 

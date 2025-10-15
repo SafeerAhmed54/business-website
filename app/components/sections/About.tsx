@@ -143,9 +143,17 @@ export default function About({ businessInfo }: AboutProps) {
                 alt="Our professional team"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+Rq5TaUVZLDe2eRvPi"
                 onError={(e) => {
+                  console.log("About image failed to load:", e);
                   e.currentTarget.src =
                     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='500' viewBox='0 0 600 500'%3E%3Crect width='600' height='500' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='%23666'%3EOur Professional Team%3C/text%3E%3C/svg%3E";
+                }}
+                onLoad={() => {
+                  console.log("About image loaded successfully");
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

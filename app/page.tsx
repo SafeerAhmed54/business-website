@@ -9,6 +9,7 @@ export const dynamic = 'force-dynamic';
 import { Hero, ServicesOverview, About, Contact } from "./components/sections";
 import ScrollToTopButton from "./components/ui/ScrollToTopButton";
 
+
 import StructuredData from "./components/StructuredData";
 import NoScriptFallback from "./components/ui/NoScriptFallback";
 import { businessInfo } from "./lib/data/business";
@@ -67,6 +68,8 @@ export default function Home() {
 
         {/* Scroll to Top Button */}
         <ScrollToTopButton />
+
+
       </div>
     </>
   );

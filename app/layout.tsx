@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { businessInfo } from "@/app/lib/data";
 import StructuredData from "@/app/components/StructuredData";
+import GlobalNavigationSlider from "@/app/components/ui/GlobalNavigationSlider";
 
 
 const inter = Inter({
@@ -118,6 +119,9 @@ export default function RootLayout({
         className={`${inter.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        
+        {/* Global Navigation Slider - appears on all pages */}
+        <GlobalNavigationSlider />
         
 
         
