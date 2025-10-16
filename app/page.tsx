@@ -66,6 +66,9 @@ export default function Home() {
         {/* Footer - Additional Information */}
         <Footer businessInfo={businessInfo} navigation={mainNavigation} />
 
+        {/* Footer - Additional Information */}
+        <Footer businessInfo={businessInfo} navigation={mainNavigation} />
+
         {/* Scroll to Top Button */}
         <ScrollToTopButton />
 
