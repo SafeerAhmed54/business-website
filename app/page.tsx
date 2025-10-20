@@ -68,11 +68,7 @@ export default function Home() {
         
         {/* Scroll to Top Button */}
         <ScrollToTopButton />
-
-        {/* Scroll to Top Button */}
-        <ScrollToTopButton />
-
-
+        
       </div>
     </>
   );
